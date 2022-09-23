@@ -1,0 +1,292 @@
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url(../../assets/fonts/Roboto-Medium.ttf);
+  font-weight: 500;
+}
+
+body {
+  background: #E5E5E5;
+  font-family: 'Roboto', sans-serif;
+  width: 100%;
+  max-width: 1600px;
+}
+
+.container {
+  max-width: 1160px;
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.background-wrapper-top {
+  background: url('../../assets/images/Giant_Panda.jpg') no-repeat top left;
+}
+
+.header {
+  background: #111115;
+}
+
+.header-container {
+  margin: 0 auto;
+  /*border: 1px solid red;*/
+  width: 100%;
+  max-width: 1160px;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-ul {
+  display: flex;
+  list-style: none;
+  width: 472px;
+  margin-right: 260px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-item {
+  /*font-family: 'Roboto', sans-serif;*/
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  color: #FFFFFF;
+
+}
+
+.designed {
+  /*font-family: 'Roboto', sans-serif;*/
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  color: #FFFFFF;
+}
+
+.watch-your-favorite {
+  height: 700px;
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+
+.watch-your__text {
+  /*border: 2px solid red;*/
+  margin-top: 86px;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: center;
+}
+
+
+.watch-your__text h1 {
+  margin: 0;
+  position: relative;
+  width: 500.31px;
+  /*font-family: 'Roboto', sans-serif;*/
+  font-style: normal;
+  font-weight: 700;
+  font-size: 106.496px;
+  line-height: 75%;
+  /* or 80px */
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  z-index: 1;
+  /*border: 2px solid red;*/
+}
+
+.watch-your__text h1:after {
+  position: absolute;
+  /*border: 2px solid red;*/
+  content: '';
+  right: 108px;
+  top: -73px;
+  width: 465px;
+  height: 465px;
+  z-index: -1;
+  border-radius: 50%;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+}
+
+.button {
+  border: none;
+  background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
+  border-radius: 25px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  text-align: center;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+.wath-online-button {
+  margin-top: 60px;
+  width: 298px;
+  height: 54px;
+}
+
+
+/* Backstage */
+.backstage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backstage-block {
+  margin: 0;
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bamboo-cap {
+  border: 1px solid red;
+  width: 609px;
+  height: 403px;
+  background: url(../../assets/images/bamboo-cap.jpg);
+  backdrop-filter: blur(2px);
+}
+
+.backstage-text {
+  border: 1px solid red;
+  margin-left: 87px;
+  width: 465px;
+}
+
+.backstage-text h2 {
+  /*font-family: 'Roboto',sans-serif;*/
+  font-style: normal;
+  font-weight: 400;
+  font-size: 48px;
+  line-height: 120%;
+  /* or 58px */
+  color: #333B41;
+}
+
+.backstage-text h3 {
+  /*font-family: 'Roboto';*/
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  /* identical to box height, or 29px */
+  color: #333B41;
+}
+
+.backstage-text div {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  color: #333B41;
+}
+
+/* Pets */
+.pets {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.pets-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-flow: wrap;
+}
+
+.pets-card {
+  display: flex;
+  flex-direction: column;
+  /*box-sizing: border-box;*/
+  width: 366px;
+  height: 426px;
+  border-radius: 5px;
+  border: 1px solid #FE9013;
+  /*border-image-source: linear-gradient(113.96deg, #FA6F32 1.49%, #FE9013 101.44%);*/
+}
+
+.pets-card-img {
+
+}
+
+.pets-card-img img {
+  border-radius: 5px 5px 0 0;
+}
+
+.pets-card-description {
+  /*border: 1px solid red;*/
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.pets-card-description-item {
+  /*display: flex;*/
+  /*flex-direction: column;*/
+  /*align-items: start;*/
+  /*justify-content: left;*/
+  margin: 0;
+  /*border: 1px solid red;*/
+  margin-left: 16px;
+}
+
+.pets-name {
+  margin: 0;
+  /*border: 1px solid red;*/
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  /* or 22px */
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.pets-native {
+  margin: 0;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 120%;
+  /* identical to box height, or 18px */
+  color: #000000;
+}
+
+.herbivore {
+  margin-right: 12px;
+}
+
+.choose-your-favorite {
+  margin-top: 80px;
+  width: 298px;
+  height: 54px;
+}
