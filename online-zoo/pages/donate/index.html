@@ -2,9 +2,213 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pet story donate</title>
+    <link rel="shortcut icon" href="../../assets/icons/panda_icon.svg" type="image/png">
+    <link href="../../assets/styles/normalize.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
 </head>
 <body>
 
+<header class="header">
+    <div class="header-container">
+        <div class="header_logo">
+            <a href="../main/index.html"><img src="../../assets/icons/header_logo.png" alt="header logo"></a>
+        </div>
+        <nav class="nav">
+            <ul class="nav-ul">
+                <li class="nav-item"><a href="../main/index.html">About</a></li>
+                <li class="nav-item"><a href="index.html">Map</a></li>
+                <li class="nav-item"><a href="index.html">Zoos</a></li>
+                <li class="nav-item active"><a href="../../pages/donate/index.html">Donate</a></li>
+                <li class="nav-item"><a href="index.html">Contact us</a></li>
+            </ul>
+        </nav>
+        <div class="designed">
+            <a href="https://www.figma.com/file/ypzT9idgAILaSRVRmDAJxn/online-zoo-3-weeks?node-id=126%3A0">Designed
+                by &#169;</a>
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <section class="panda-bg"></section>
+
+    <section class="pick-and-feed-a-friend">
+
+        <div class="container pick-and-feed-a-friend-intro">
+            <h1>THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!</h1>
+            <div class="pick-and-feed-a-friend-text-1">
+                Even though the Zoo has been able to reopen, we are at a greatly reduced capacity with educational
+                programs and public and private events cancelled or postponed for additional months. We need you now
+                more than ever to help ensure that we overcome these challenges. We have been actively raising funds in
+                the community, and we are grateful for the generosity. But much more support is still needed, and we
+                need your help! Please consider a gift today – no matter what size – to help us sustain our mission.
+            </div>
+            <div class="pick-and-feed-a-friend-text-2">Donation Information</div>
+        </div>
+
+        <div class="pick-and-feed container">
+            <div class="pick-and-feed-block">
+                <h2>Pick and feed a friend</h2>
+                <div class="pick-and-feed-text">We know the animals bring you joy, and in these extraordinary times,
+                    we’re glad.
+                </div>
+                <div class="panda-block">
+                    <div class="panda-block-count">
+                        <div class="panda-block-count-number">4</div>
+                        <div class="panda-block-count-text">Panda diet for the day.</div>
+                    </div>
+                    <div>
+                        <img src="../../assets/icons/multi.png" alt="multi">
+                    </div>
+                    <div class="panda-block-icon">
+                        <img src="../../assets/icons/panda_widget1.png" alt="panda">
+                    </div>
+                </div>
+
+                <div class="amount">
+                    <div class="amount-title">
+                        Amount
+                    </div>
+                    <div class="amount-range">
+                        <div class="amount-range-line">
+                            <div class="amount-range-item"></div>
+                            <div class="amount-range-item"></div>
+                            <div class="amount-range-item active"></div>
+                            <div class="amount-range-item"></div>
+                            <div class="amount-range-item"></div>
+                            <div class="amount-range-item"></div>
+                            <div class="amount-range-item"></div>
+                            <div class="amount-range-item"></div>
+                        </div>
+                    </div>
+                    <div class="amount-price">
+                        <div class="amount-price-item"><span class="price-icon">$</span>5000</div>
+                        <div class="amount-price-item" style="margin-left: 5px"><span class="price-icon">$</span>2000
+                        </div>
+                        <div class="amount-price-item active" style="margin-left: 6px"><span class="price-icon">$</span>1000
+                        </div>
+                        <div class="amount-price-item" style="margin-left: 5px"><span class="price-icon">$</span>500
+                        </div>
+                        <div class="amount-price-item" style="margin-left: 3px"><span class="price-icon">$</span>250
+                        </div>
+                        <div class="amount-price-item"><span class="price-icon">$</span>100</div>
+                        <div class="amount-price-item" style="margin-left: 5px"><span class="price-icon">$</span>50
+                        </div>
+                        <div class="amount-price-item" style="margin-left: 2px"><span class="price-icon">$</span>25
+                        </div>
+                    </div>
+                </div>
+
+                <form class="pick-and-feed-block-form">
+                    <div class="dollar-input">
+                        <input type="number" placeholder="Another amount" min="0" maxlength="9999" required>
+                        <img class="dollar" src="../../assets/icons/dollar.png" alt="dollar">
+                    </div>
+                    <div class="radio-input">
+                        <div class="radio-input-item">
+                            <input type="radio" name="donate" id="Monthly" checked value="Monthly">
+                            <label for="Monthly">Monthly</label>
+                        </div>
+                        <div class="radio-input-item">
+                            <input type="radio" name="donate" id="Once" value="Monthly">
+                            <label for="Once">Once</label>
+                        </div>
+                    </div>
+                </form>
+
+                <a href="index.html">
+                    <button class="button feed-a-friend">Feed a friend now</button>
+                </a>
+
+                <div class="pick-and-feed-block-text">
+                    Share with your friends on social networks
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer class="footer">
+    <div class="footer-content container">
+        <div class="footer-content-1">
+            <div class="footer-logo">
+                <a href="../main/index.html"><img src="../../assets/icons/logo-footer.png" alt="logo footer"></a>
+            </div>
+            <form class="subsribe-form">
+                <div class="subsribe-form-name">Subscribe to our news</div>
+                <div class="subsribe-form-input">
+                    <label for="subsribe"></label>
+                    <input id="subsribe" placeholder="Enter your email" type="email" required>
+                    <button class="button-submit">Submit</button>
+                </div>
+            </form>
+        </div>
+        <a href="../donate/index.html">
+            <button class="button donate-for">donate for volunteers</button>
+        </a>
+        <div class="footer-content-2">
+            <div class="sotial-network">
+                <div class="sotial-network-item">
+                    <div class="sotial-network-item-logo">
+                        <a class="sotial-network-item-logo-a" href="https://www.facebook.com/" target="_blank">
+                            <img src="../../assets/icons/facebook.png" alt="facebook">
+                        </a>
+                    </div>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <span class="sotial-network-name">Facebook</span>
+                    </a>
+                </div>
+
+                <div class="sotial-network-item">
+                    <div class="sotial-network-item-logo">
+                        <a class="sotial-network-item-logo-a" href="https://twitter.com/" target="_blank">
+                            <img src="../../assets/icons/twitter.png" alt="twitter">
+                        </a>
+                    </div>
+                    <a href="https://twitter.com/" target="_blank">
+                        <span class="sotial-network-name">Twitter</span>
+                    </a>
+                </div>
+
+                <div class="sotial-network-item">
+                    <div class="sotial-network-item-logo">
+                        <a class="sotial-network-item-logo-a" href="https://www.instagram.com/" target="_blank">
+                            <img src="../../assets/icons/instagram.png" alt="instagram">
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/" target="_blank">
+                        <span class="sotial-network-name">Instagram</span>
+                    </a>
+                </div>
+
+                <div class="sotial-network-item">
+                    <div class="sotial-network-item-logo">
+                        <a class="sotial-network-item-logo-a" href="https://www.youtube.com/" target="_blank">
+                            <img src="../../assets/icons/youtube.png" alt="youtube">
+                        </a>
+                    </div>
+                    <a href="https://www.youtube.com/" target="_blank">
+                        <span class="sotial-network-name">YouTube</span>
+                    </a>
+                </div>
+            </div>
+            <nav class="footer-nav">
+                <ul class="nav-ul nav-ul-footer">
+                    <li class="nav-item active"><a href="index.html">About</a></li>
+                    <li class="nav-item"><a href="index.html">Map</a></li>
+                    <li class="nav-item"><a href="index.html">Zoos</a></li>
+                    <li class="nav-item"><a href="index.html">Contact us</a></li>
+                </ul>
+            </nav>
+            <div class="designed-by-RSS">
+                <div class="designed-by-RSS-text">Designed by Alisa Samborskaya</div>
+                <div class="designed-by-RSS-text">&#169;RSSchool & &#169;Yem Digital 2021</div>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
