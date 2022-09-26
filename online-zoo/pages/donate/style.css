@@ -310,8 +310,8 @@ body {
   border-radius: 25px;
   background: #FFEE2E;
   animation: none;
+  transition: all 0.5s;
 }
-
 
 .amount-range-item:hover {
   animation: pulse 1s infinite;
