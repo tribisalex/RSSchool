@@ -340,10 +340,49 @@ body {
   border-radius: 5px 5px 0 0;
 }
 
-.pets-card-img img:hover {
-  width: 386px;
-  height: 386px;
+.pets-card img:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.1);
 }
+
+.pets-card:hover{
+  filter:grayscale(80%);
+  -webkit-filter:grayscale(70%);
+  transition:0.6s;
+  -webkit-transition:0.6s;
+}
+
+.pets-card:hover .pets-card-description{
+  visibility:visible;
+  transition:1s;
+  -webkit-transition:1s;
+  transform:translatey(-350px);
+  -webkit-transform:translatey(-350px)
+}
+
+.pets-card-description-item:hover {
+  color: white;
+}
+
+/*.pets-card:hover .pets_subtitle{*/
+/*  visibility:visible;*/
+/*  transition:1s;*/
+/*  -webkit-transition:1s;*/
+/*  transform:translatey(-350px);*/
+/*  -webkit-transform:translatey(-350px)*/
+/*}*/
+
+/*.pets-card:hover{*/
+/*  filter:grayscale(80%);*/
+/*  -webkit-filter:grayscale(70%);*/
+/*  transition:0.6s;*/
+/*  -webkit-transition:0.6s;*/
+/*}*/
+
+/*.pets-subtitle:hover {*/
+/*  color: white;*/
+/*}*/
 
 .pets-card-description {
   width: 100%;
