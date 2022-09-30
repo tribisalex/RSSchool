@@ -29,6 +29,7 @@
 }
 
 body {
+  margin: 0 auto;
   background: #E5E5E5;
   font-family: 'Roboto', sans-serif;
   width: 100%;
@@ -110,11 +111,11 @@ body {
 }
 
 .nav-item a:hover {
-  color:#F9804B;
+  color: #F9804B;
 }
 
 .nav-item.active a {
-  color:#F9804B;
+  color: #F9804B;
 }
 
 .designed a {
@@ -134,9 +135,10 @@ body {
 }
 
 .designed a:hover {
-  color:#F9804B;
+  color: #F9804B;
 }
 
+/*watch-your-favorite*/
 .watch-your-favorite {
   height: 700px;
   display: flex;
@@ -197,7 +199,6 @@ body {
 /* Backstage */
 .backstage {
   height: 640px;
-  /*margin-top: 140px;*/
   position: relative;
   display: flex;
   align-items: center;
@@ -206,14 +207,12 @@ body {
 
 .backstage-block {
   margin-top: 40px;
-  /*border: 1px solid red;*/
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .bamboo-cap {
-  /*border: 1px solid red;*/
   width: 609px;
   height: 403px;
   background: url(../../assets/images/bamboo-cap.jpg);
@@ -222,7 +221,6 @@ body {
 
 .backstage-text {
   margin: 0 0 0 87px;
-  /*border: 1px solid red;*/
   width: 465px;
   height: 403px;
 }
@@ -346,43 +344,24 @@ body {
   transform: scale(1.1);
 }
 
-.pets-card:hover{
-  filter:brightness(50%);
-  -webkit-filter:brightness(50%);
-  transition:0.6s;
-  -webkit-transition:0.6s;
+.pets-card:hover {
+  filter: brightness(50%);
+  -webkit-filter: brightness(50%);
+  transition: 0.6s;
+  -webkit-transition: 0.6s;
 }
 
-.pets-card:hover .pets-card-description{
-  visibility:visible;
-  transition:1s;
-  -webkit-transition:1s;
-  transform:translatey(-350px);
-  -webkit-transform:translatey(-350px)
+.pets-card:hover .pets-card-description {
+  visibility: visible;
+  transition: 1s;
+  -webkit-transition: 1s;
+  transform: translatey(-350px);
+  -webkit-transform: translatey(-350px)
 }
 
 .pets-card-description-item:hover {
   color: white;
 }
-
-/*.pets-card:hover .pets_subtitle{*/
-/*  visibility:visible;*/
-/*  transition:1s;*/
-/*  -webkit-transition:1s;*/
-/*  transform:translatey(-350px);*/
-/*  -webkit-transform:translatey(-350px)*/
-/*}*/
-
-/*.pets-card:hover{*/
-/*  filter:grayscale(80%);*/
-/*  -webkit-filter:grayscale(70%);*/
-/*  transition:0.6s;*/
-/*  -webkit-transition:0.6s;*/
-/*}*/
-
-/*.pets-subtitle:hover {*/
-/*  color: white;*/
-/*}*/
 
 .pets-card-description {
   width: 100%;
@@ -448,7 +427,6 @@ body {
 
 
 /* pick-and-feed */
-
 .pick-and-feed-a-friend {
   height: 1004px;
   background: linear-gradient(315.75deg, rgba(254, 210, 144, 0.7) 30.06%, #FEBDAB 100.95%, rgba(254, 210, 144, 0.7) 106.36%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%), linear-gradient(315.75deg, rgba(254, 189, 171, 0.74) 30.06%, rgba(243, 169, 248, 0.66) 50.74%, #E0D8F0 80.49%, #EAF7FE 127.9%, #EAF7FE 149.54%);
@@ -589,7 +567,6 @@ body {
 }
 
 /* testimonials */
-
 .testimonials {
   overflow: hidden;
   height: 919px;
@@ -632,6 +609,10 @@ body {
   flex-direction: column;
   align-items: start;
   justify-content: start;
+}
+
+.testimonials-hiddden {
+  display: none;
 }
 
 .testimonials-block-item-info {
@@ -893,7 +874,6 @@ body {
 }
 
 
-
 .footer-nav {
   padding: 0;
   width: 362px;
@@ -918,4 +898,487 @@ body {
 
 .designed-by-RSS div:first-child {
   margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+  .nav-ul {
+    /*width: 472px;*/
+    margin-right: 20px;
+  }
+}
+
+
+@media (max-width: 1000px) {
+  body {
+    max-width: 1000px;
+  }
+
+  .container {
+    max-width: 940px;
+    padding: 0;
+  }
+
+  .header-container {
+    max-width: 940px;
+  }
+
+  .header_logo {
+    margin-left: 10px;
+  }
+
+  .header_logo img {
+    width: 82px;
+    height: 52px;
+    margin: 0 20px 0 0;
+  }
+
+  .nav-ul {
+    width: 431px;
+    margin-right: 249px;
+  }
+
+  .nav-item {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .designed {
+
+  }
+
+  .background-wrapper-top {
+    background: url('../../assets/images/Giant_Panda.png') no-repeat top left;
+  }
+
+  .watch-your-favorite {
+    height: 504px;
+  }
+
+  .watch-your__text {
+    margin-top: 42.8px;
+  }
+
+  .watch-your__text h1 {
+    font-size: 85px;
+  }
+
+  .watch-your__text h1:after {
+    right: 139px;
+    top: -55px;
+    width: 367px;
+    height: 367px;
+  }
+
+  .wath-online-button {
+    margin-top: 40.2px;
+    width: 298px;
+    height: 54px;
+  }
+
+  /* Backstage */
+  .backstage {
+    height: 427px;
+    margin-top: 100px;
+    padding: 0;
+  }
+
+  .backstage-block {
+    margin: 0;
+  }
+
+  .bamboo-cap {
+    width: 455px;
+    height: 408px;
+    background: url(../../assets/images/bamboo-cap.png);
+  }
+
+  .backstage-text {
+    margin: 0 0 0 31px;
+    width: 454px;
+    height: 427px;
+  }
+
+  .backstage-text h2 {
+  }
+
+  .backstage-text-1 {
+  }
+
+  .backstage-text-2 {
+  }
+
+  .backstage-text h3 {
+  }
+
+  .backstage-text div {
+
+  }
+
+  .backstage-flower {
+    opacity: 0;
+  }
+
+
+  /* Pets */
+  .pets {
+    overflow: hidden;
+    height: 1075px;
+    margin-top: 142px;
+  }
+
+  .pets-block {
+    width: 1265px;
+    height: 801px;
+  }
+
+  .pets-card {
+    width: 294px;
+    height: 354px;
+    border-radius: 5px;
+    border: 1px solid #FE9013;
+    /*border-image-source: linear-gradient(113.96deg, #FA6F32 1.49%, #FE9013 101.44%);*/
+  }
+
+  .arrow {
+    top: 370px;
+    width: 62px;
+    height: 62px;
+  }
+
+  .arrow-left {
+    left: 355px;
+  }
+
+  .arrow-right {
+    right: 355px;
+  }
+
+  .pets-card-img {
+  }
+
+  .pets-card-img img {
+    Width: 294px;
+    Height: 294px;
+  }
+
+  .pets-card:hover .pets-card-description {
+    transform: translatey(-300px);
+    -webkit-transform: translatey(-290px);
+  }
+
+  .pets-card:hover .pets-name {
+    color: white;
+  }
+
+  .pets-card:hover .pets-native {
+    color: white;
+  }
+
+  .pets-card-description {
+  }
+
+  .pets-card-description-item {
+
+  }
+
+  .pets-name {
+
+  }
+
+  .pets-native {
+
+  }
+
+  .herbivore {
+
+  }
+
+  .choose-your-favorite {
+
+  }
+
+  .palm-photo {
+    bottom: 0;
+    left: -195px;
+    width: 386px;
+    height: 202px;
+  }
+
+  .strelitzia {
+    width: 241px;
+    height: 180px;
+    right: -15px;
+  }
+
+
+  /* pick-and-feed */
+  .pick-and-feed-a-friend {
+    height: 876px;
+  }
+
+  .pick-and-feed {
+    margin-top: 30px;
+    height: 796px;
+  }
+
+  .pick-and-feed h2 {
+    margin-top: 30px;
+  }
+
+  .pick-text {
+    margin: 0;
+    margin-left: 49px;
+  }
+
+  .pick-text-1 {
+    margin-top: 20px;
+  }
+
+  .pick-text-2 {
+    margin-top: 20px;
+    width: 813px;
+  }
+
+  .pick-text-3 {
+    width: 92%;
+    margin-top: 10px;
+  }
+
+  .pick-text-3 a {
+
+  }
+
+  .pick-and-feed h3 {
+    margin: 0;
+    margin-top: 40px;
+  }
+
+  .how-it-work-block {
+
+  }
+
+  .how-it-work-block-item {
+
+  }
+
+  .how-it-work-icon {
+
+  }
+
+  .how-it-work-name {
+
+  }
+
+  .vector {
+
+  }
+
+  .feed-a-friend {
+    margin-top: 70px;
+  }
+
+
+  /* testimonials */
+  .testimonials {
+    overflow: hidden;
+    height: 842px;
+  }
+
+  .testimonials-content {
+
+  }
+
+  .testimonials h3 {
+    margin-top: 100px;
+    margin-bottom: 0;
+  }
+
+  .testimonials-block {
+    margin-top: 0;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .testimonials-block-item {
+    margin-top: 30px;
+    width: 290px;
+    height: 389px;
+  }
+
+  .testimonials-hidden {
+    display: block;
+  }
+
+  .testimonials-hidden-small {
+    display: none;
+  }
+
+  .testimonials-block-item-info {
+
+  }
+
+  .testimonials-block-item-info_1 {
+
+  }
+
+  .testimonials-block-item-username {
+
+  }
+
+  .testimonials-local-circle {
+
+  }
+
+  .testimonials-block-item-local {
+
+  }
+
+  .text-feedback {
+
+  }
+
+  .pagination {
+    margin-top: 20px;
+    width: 390px;
+  }
+
+  .pagination:hover {
+
+  }
+
+  .pagination-item {
+    width: 75px;
+    height: 6px;
+  }
+
+  .pagination-item:hover {
+
+  }
+
+  .leave-feed-button {
+    margin-top: 50px;
+  }
+
+  .leav-foto {
+    width: 191.98px;
+    height: 188.49px;
+    bottom: 45px;
+    right: -21px;
+  }
+
+  .leav-foto img {
+    width: 100%;
+  }
+
+
+  /* footer */
+  .footer {
+
+  }
+
+  .footer-content {
+
+  }
+
+  .footer-content-1 {
+    width: 906px;
+  }
+
+  .footer-logo {
+
+  }
+
+  .subsribe-form {
+
+  }
+
+  .subsribe-form-name {
+
+  }
+
+  .subsribe-form-input input {
+    padding: 5px;
+    width: 215px;
+    height: 30px;
+  }
+
+  .subsribe-form-input::placeholder {
+
+  }
+
+  .subsribe-form button {
+    margin-left: 7px;
+  }
+
+  .button-submit {
+
+  }
+
+  .button-submit:hover {
+
+  }
+
+  .footer-content-2 {
+    width: 934px;
+  }
+
+  .donate-for {
+
+  }
+
+  .sotial-network {
+
+  }
+
+  .sotial-network-item {
+
+  }
+
+  .sotial-network-item-logo {
+
+  }
+
+  .sotial-network-item-logo-a {
+
+  }
+
+  .sotial-network-item-logo:hover {
+
+  }
+
+
+  .sotial-network-name:hover {
+
+  }
+
+  .sotial-network-item a {
+
+  }
+
+  .sotial-network-item:last-child {
+
+  }
+
+  .sotial-network-name {
+
+  }
+
+
+  .footer-nav {
+    width: 332px;
+    margin-left: 105px;
+  }
+
+  .nav-ul-footer {
+
+  }
+
+  .designed-by-RSS-text {
+
+  }
+
+  .designed-by-RSS div:first-child {
+
+  }
 }
