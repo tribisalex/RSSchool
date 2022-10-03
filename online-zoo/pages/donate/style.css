@@ -426,7 +426,6 @@ body {
 }
 
 
-
 .price-icon {
   font-size: 21px;
 }
@@ -449,7 +448,6 @@ body {
 .show__price-tablet {
   display: none;
 }
-
 
 .dollar-input {
   width: 268px;
@@ -868,7 +866,7 @@ input[type='radio']:checked:after {
 
   .pick-and-feed-text {
     margin-top: 10px;
-    text-align: center;
+    /*text-align: center;*/
   }
 
   .panda-block {
@@ -963,6 +961,14 @@ input[type='radio']:checked:after {
   }
 
   .hidden-line, .hidden-price {
+    display: none;
+  }
+
+  .hidden-line-2 {
+    display: none;
+  }
+
+  .show__price-tablet {
     display: none;
   }
 
@@ -1300,10 +1306,17 @@ input[type='radio']:checked:after {
     display: none;
   }
 
-  .hidden-line-1 {
+  /*.hidden-line-1 {*/
+  /*  display: none;*/
+  /*}*/
+
+  .hidden-line-2 {
     display: none;
   }
 
+  .show__price-tablet {
+    display: flex;
+  }
   .price-icon {
 
   }
@@ -1354,6 +1367,12 @@ input[type='radio']:checked:after {
   .feed-a-friend {
 
   }
+
+  .amount-title {
+    align-self: start;
+    margin-left: 0;
+  }
+
 
   .pick-and-feed-block-text {
     margin: 30px 0 29px 0;
@@ -1454,6 +1473,196 @@ input[type='radio']:checked:after {
     /*right: -200px;*/
     /*z-index: 1999;*/
     /*transition: all 0.4s ease;*/
+  }
+
+
+  /* Panda */
+  .panda-bg {
+    height: 220px;
+    background: url('../../assets/images/panda_bg_mob.png') top 34px left no-repeat;
+  }
+
+  /* pick-and-feed */
+  .pick-and-feed-a-friend {
+    /*height: 1350px;*/
+  }
+
+  .pick-and-feed-a-friend-intro {
+    margin-left: 10px;
+  }
+
+  .pick-and-feed-a-friend h1 {
+    margin-top: 30px;
+    max-width: 300px;
+    font-size: 24px;
+  }
+
+  .pick-and-feed-a-friend-text-1 {
+    margin-top: 20px;
+    max-width: 300px;
+  }
+
+  .pick-and-feed-a-friend-text-2 {
+    font-size: 24px;
+    margin-top: 25px;
+  }
+
+  .pick-and-feed {
+    max-width: 300px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .pick-and-feed-block {
+    max-width: 600px;
+  }
+
+  .pick-and-feed h2 {
+    font-size: 24px;
+    margin-top: 20px;
+  }
+
+  .pick-and-feed-text {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+
+  .panda-block {
+    margin-top: 15px;
+  }
+
+  .panda-block-count {
+    margin-top: 35px;
+  }
+
+  .panda-block-count-number {
+    font-size: 40.6015px;
+  }
+
+  .panda-block-count-text {
+    font-size: 9.02255px;
+  }
+
+  .panda-block-icon img {
+    width: 160.15px;
+    height: 138.72px;
+  }
+
+  .amount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px;
+    width: 100%;
+    margin-top: 0;
+  }
+
+  .amount-title {
+    margin-left: 10px;
+  }
+
+  .amount-range {
+    margin-top: 10px;
+    width: 300px;
+    height: 13.5px;
+  }
+
+  .amount-range-line {
+    max-width: 262px;
+    background: #72828E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .amount-range-item {
+    width: 5px;
+    height: 5px;
+  }
+
+
+  .amount-range-item-1 {
+
+  }
+
+  .amount-range-item-1:after {
+
+  }
+
+
+  .amount-range-item-1:hover {
+  }
+
+  .amount-range-item.active:after {
+    width: 20px;
+    height: 20px;
+    top: -10px;
+    left: -10px;
+  }
+
+  .amount-range-item.active:before {
+    width: 11.48px;
+    height: 11.48px;
+    top: -5.6px;
+    left: -5.6px;
+  }
+
+  .amount-price {
+    width: 100%;
+    max-width: 555px;
+    margin-top: 5px;
+  }
+
+  .amount-price-item {
+    font-size: 13px;
+  }
+
+
+  .amount-price-item.active {
+
+  }
+
+  .hidden-line, .hidden-price {
+    display: none;
+  }
+
+  .hidden-price-tablet {
+    display: none;
+  }
+
+  .hidden-line-1 {
+    display: none;
+  }
+
+  .price-icon {
+    font-size: 10px;
+
+  }
+
+  .pick-and-feed-block-form {
+    margin-top: 20px;
+  }
+
+  .dollar-input {
+    text-align: center;
+  }
+
+  .pick-and-feed-block-form input {
+    width: 170px;
+    height: 30px;
+  }
+
+  .dollar {
+    right: 55px;
+    top: 10px;
+  }
+
+  .pick-and-feed-block-text {
+    margin: 30px 0 20px 0;
+    font-size: 15.5px;
+    text-align: center;
+    max-width: 300px;
+    width: 100%;
   }
 
 
