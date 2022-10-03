@@ -81,6 +81,7 @@ body {
 .menu-burger {
   display: none;
 }
+
 .header-container {
   margin: 0 auto;
   width: 100%;
@@ -424,6 +425,8 @@ body {
   color: #FE9013;
 }
 
+
+
 .price-icon {
   font-size: 21px;
 }
@@ -438,6 +441,15 @@ body {
 .hidden-line-1 {
   display: none;
 }
+
+.hidden-line-2 {
+  display: none;
+}
+
+.show__price-tablet {
+  display: none;
+}
+
 
 .dollar-input {
   width: 268px;
@@ -811,14 +823,6 @@ input[type='radio']:checked:after {
   }
 
 
-
-
-
-
-
-
-
-
   /* Panda */
   .panda-bg {
     height: 390px;
@@ -1017,15 +1021,6 @@ input[type='radio']:checked:after {
   }
 
 
-
-
-
-
-
-
-
-
-
   /* footer */
   .footer-content-1 {
     max-width: 906px;
@@ -1089,10 +1084,6 @@ input[type='radio']:checked:after {
   .background-wrapper-top {
     background: url('../../assets/images/Giant_Panda.png') no-repeat top left;
   }
-
-
-
-
 
 
 }
@@ -1165,13 +1156,208 @@ input[type='radio']:checked:after {
   }
 
 
+  /* Panda */
+  .panda-bg {
+    height: 370px;
+    background: url('../../assets/images/panda_bg_tablet.png') top 34px left no-repeat;
+  }
+
+  /* pick-and-feed */
+  .pick-and-feed-a-friend {
+    /*height: 1350px;*/
+  }
+
+  .pick-and-feed-a-friend-intro {
+    margin-left: 20px;
+  }
+
+  .pick-and-feed-a-friend h1 {
+    margin-top: 30px;
+    max-width: 600px;
+    font-size: 24px;
+  }
+
+  .pick-and-feed-a-friend-text-1 {
+    margin-top: 20px;
+    max-width: 600px;
+  }
+
+  .pick-and-feed-a-friend-text-2 {
+    margin-top: 30px;
+  }
+
+  .pick-and-feed {
+    max-width: 600px;
+    margin-top: 30px;
+    margin-bottom: 45px;
+  }
+
+  .pick-and-feed-block {
+    max-width: 600px;
+  }
+
+  .pick-and-feed h2 {
+    margin: 0;
+    padding: 0;
+    margin-top: 30px;
+  }
+
+  .pick-and-feed-text {
+    margin-top: 20px;
+  }
+
+  .panda-block {
+    margin-top: 50px;
+  }
+
+  .panda-block-count {
+    margin-top: 35px;
+  }
+
+  .panda-block-count-number {
+
+  }
+
+  .panda-block-count-text {
+
+  }
+
+  .panda-block-icon {
+
+  }
+
+  .amount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .amount-title {
+    margin-left: 10px;
+  }
+
+  .amount-range {
+    margin-top: 10px;
+    width: 600px;
+  }
+
+  .amount-range-line {
+    max-width: 524px;
+    background: #72828E;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .amount-range-item {
+
+  }
 
 
+  .amount-range-item-1 {
+
+  }
+
+  .amount-range-item-1:after {
+
+  }
 
 
+  .amount-range-item-1:hover {
+  }
+
+  .amount-range-item.active:after {
+
+  }
+
+  .amount-range-item.active:before {
+
+  }
+
+  .amount-price {
+    width: 100%;
+    max-width: 555px;
+    margin-top: 15px;
+  }
+
+  .amount-price-item {
+
+  }
 
 
+  .amount-price-item.active {
 
+  }
+
+  .hidden-line, .hidden-price {
+    display: none;
+  }
+
+  .hidden-price-tablet {
+    display: none;
+  }
+
+  .hidden-line-1 {
+    display: none;
+  }
+
+  .price-icon {
+
+  }
+
+  .pick-and-feed-block-form {
+
+  }
+
+  .dollar-input {
+    text-align: center;
+  }
+
+  .pick-and-feed-block-form input {
+    width: 170px;
+    height: 30px;
+  }
+
+  .dollar {
+    right: 55px;
+    top: 10px;
+  }
+
+  .radio-input {
+
+  }
+
+  .pick-and-feed-block-form label {
+
+  }
+
+  .radio-input {
+  }
+
+  .radio-input-item {
+  }
+
+  .radio-input-item label {
+  }
+
+  .radio-input-item:first-child {
+
+  }
+
+  .radio-input-item input[type=radio] {
+
+  }
+
+  .feed-a-friend {
+
+  }
+
+  .pick-and-feed-block-text {
+    margin: 30px 0 29px 0;
+  }
 
 
   /* footer */
@@ -1269,11 +1455,6 @@ input[type='radio']:checked:after {
     /*z-index: 1999;*/
     /*transition: all 0.4s ease;*/
   }
-
-
-
-
-
 
 
   /* footer */
