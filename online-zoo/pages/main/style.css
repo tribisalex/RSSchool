@@ -1425,6 +1425,7 @@ body {
 
 @media (max-width: 730px) {
   body {
+    position: relative;
     max-width: 730px;
   }
 
@@ -1432,7 +1433,14 @@ body {
     max-width: 730px;
   }
 
+  .header {
+    max-width: 730px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+  }
   .header-container {
+    background-color: #111115;
     max-width: 599.93px;
     height: 34px;
   }
