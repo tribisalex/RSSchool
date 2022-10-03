@@ -886,7 +886,6 @@ body {
   background: #4B9200;
 }
 
-
 .sotial-network-name:hover {
   color: #4B9200;
 }
@@ -930,7 +929,6 @@ body {
   /* identical to box height, or 21px */
   color: #FFFFFF;
 }
-
 
 .designed-by-RSS div:first-child {
   margin-bottom: 10px;
@@ -1425,6 +1423,7 @@ body {
 
 @media (max-width: 730px) {
   body {
+    position: relative;
     max-width: 730px;
   }
 
@@ -1432,7 +1431,15 @@ body {
     max-width: 730px;
   }
 
+  .header {
+    max-width: 730px;
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+  }
+
   .header-container {
+    background-color: #111115;
     max-width: 599.93px;
     height: 34px;
   }
@@ -1482,10 +1489,12 @@ body {
   }
 
   .watch-your-favorite {
+    padding-top: 34px;
     height: 339px;
   }
 
   .watch-your-favorite.container {
+    /*margin-top: 34px;*/
     max-width: 730px;
   }
 
@@ -2110,9 +2119,8 @@ body {
   .arrow__mobile-1:after {
     position: absolute;
     content: url("../../assets/icons/arrow_mobile.png");
-    width: 50px;
-    height: 50px;
-    top: 0;
+    bottom: -40px;
+    right: -30px;
     border: 2px solid red;
   }
 
