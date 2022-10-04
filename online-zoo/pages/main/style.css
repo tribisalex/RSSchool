@@ -2119,9 +2119,15 @@ body {
   .arrow__mobile-1:after {
     position: absolute;
     content: url("../../assets/icons/arrow_mobile.png");
-    bottom: -40px;
+    bottom: -25px;
     right: -30px;
-    border: 2px solid red;
+  }
+
+  .arrow__mobile-2:after {
+    position: absolute;
+    content: url("../../assets/icons/arrow_mobile.png");
+    bottom: -20px;
+    right: -30px;
   }
 
   .feed-a-friend {
@@ -2278,7 +2284,7 @@ body {
   }
 }
 
-@media (max-width: 380px) {
+@media (max-width: 350px) {
   .background-wrapper-top {
     background: url('../../assets/images/Giant_Panda_mobile.png') no-repeat top 34px left;
   }

@@ -1477,10 +1477,10 @@ input[type='radio']:checked:after {
 
 
   /* Panda */
-  .panda-bg {
-    height: 220px;
-    background: url('../../assets/images/panda_bg_mob.png') top 34px left no-repeat;
-  }
+  /*.panda-bg {*/
+  /*  height: 220px;*/
+  /*  background: url('../../assets/images/panda_bg_mob.png') top 34px left no-repeat;*/
+  /*}*/
 
   /* pick-and-feed */
   .pick-and-feed-a-friend {
@@ -1760,8 +1760,9 @@ input[type='radio']:checked:after {
   }
 }
 
-@media (max-width: 380px) {
-  .background-wrapper-top {
-    background: url('../../assets/images/Giant_Panda_mobile.png') no-repeat top 34px left;
+@media (max-width: 350px) {
+  .panda-bg {
+    height: 220px;
+    background: url('../../assets/images/panda_bg_mob.png') top 34px left no-repeat;
   }
 }
