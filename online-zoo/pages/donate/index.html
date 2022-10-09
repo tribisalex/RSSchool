@@ -8,6 +8,7 @@
     <link href="../../assets/styles/normalize.css" rel="stylesheet">
     <link href="style.css" rel="stylesheet">
     <script src="../main/script.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
 <div class="wrapper">
@@ -29,7 +30,7 @@
                     <img src="../../assets/icons/header_logo_menu.png" alt="header logo">
                 </a>
                 <ul class="nav-ul" id="nav-ul">
-                    <li class="nav-item"><a href="index.html">About</a></li>
+                    <li class="nav-item"><a href="../main/index.html">About</a></li>
                     <li class="nav-item"><a href="index.html">Map</a></li>
                     <li class="nav-item"><a href="index.html">Zoos</a></li>
                     <li class="nav-item active"><a href="../../pages/donate/index.html">Donate</a></li>
@@ -97,125 +98,148 @@
                         <div class="amount-slider">
                             <div class="range-line"></div>
                             <!--            <label><input type="radio" name="band" value="" checked><span>AM</span></label>-->
-                            <label class="hide-1000"><input type="radio" name="band" value="$5000"><span>$5000</span></label>
-                            <label class="hide-640"><input type="radio" name="band" value="$2000"><span>$2000</span></label>
-                            <label class="hide-640"><input type="radio" name="band" value="$1000"><span>$1000</span></label>
-                            <label><input type="radio" name="band" value="$500"><span>$500</span></label>
-                            <label><input type="radio" name="band" value="$250"><span>$250</span></label>
-                            <label><input type="radio" name="band" value="$100" checked><span>$100</span></label>
-                            <label><input type="radio" name="band" value="$50"><span>$50</span></label>
-                            <label><input type="radio" name="band" value="$25"><span>$25</span></label>
+                            <label class="hide-1000">
+                                <input class="amount-radio" type="radio" name="band" value="5000">
+                                <span>$5000</span>
+                            </label>
+                            <label class="hide-640">
+                                <input class="amount-radio" type="radio" name="band" value="2000">
+                                <span>$2000</span>
+                            </label>
+                            <label class="hide-640">
+                                <input class="amount-radio" type="radio" name="band" value="1000">
+                                <span>$1000</span>
+                            </label>
+                            <label>
+                                <input class="amount-radio" type="radio" name="band" value="500">
+                                <span>$500</span>
+                            </label>
+                            <label>
+                                <input class="amount-radio" type="radio" name="band" value="250">
+                                <span>$250</span>
+                            </label>
+                            <label>
+                                <input class="amount-radio" type="radio" name="band" value="100" checked>
+                                <span>$100</span>
+                            </label>
+                            <label>
+                                <input class="amount-radio" type="radio" name="band" value="50">
+                                <span>$50</span>
+                            </label>
+                            <label>
+                                <input class="amount-radio" type="radio" name="band" value="25">
+                                <span>$25</span>
+                            </label>
                         </div>
 
 
+                        <!--                        <div class="amount-range">-->
+                        <!--                            <div class="amount-range-line hidden-line">-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item active"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
 
+                        <!--                            <div class="amount-range-line hidden-line-1">-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item active"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
 
-<!--                        <div class="amount-range">-->
-<!--                            <div class="amount-range-line hidden-line">-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item active"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                        <!--                            <div class="amount-range-line hidden-line-2">-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item active"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                                <div class="amount-range-item-1">-->
+                        <!--                                    <div class="amount-range-item"></div>-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                       -->
+                        <!--                        <div class="amount-price hidden-price-tablet">-->
+                        <!--                            <div class="amount-price-item hidden-price"><span class="price-icon">$</span>5000</div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>2000-->
+                        <!--                            </div>-->
+                        <!--                            <div class="amount-price-item active"><span-->
+                        <!--                                    class="price-icon">$</span>1000-->
+                        <!--                            </div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>500-->
+                        <!--                            </div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>250-->
+                        <!--                            </div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>100</div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>50-->
+                        <!--                            </div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>25-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
-<!--                            <div class="amount-range-line hidden-line-1">-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item active"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-
-<!--                            <div class="amount-range-line hidden-line-2">-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item active"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                                <div class="amount-range-item-1">-->
-<!--                                    <div class="amount-range-item"></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                       -->
-<!--                        <div class="amount-price hidden-price-tablet">-->
-<!--                            <div class="amount-price-item hidden-price"><span class="price-icon">$</span>5000</div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>2000-->
-<!--                            </div>-->
-<!--                            <div class="amount-price-item active"><span-->
-<!--                                    class="price-icon">$</span>1000-->
-<!--                            </div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>500-->
-<!--                            </div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>250-->
-<!--                            </div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>100</div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>50-->
-<!--                            </div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>25-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="amount-price show__price-tablet">-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>500-->
-<!--                            </div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>250-->
-<!--                            </div>-->
-<!--                            <div class="amount-price-item active"><span class="price-icon">$</span>100</div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>50-->
-<!--                            </div>-->
-<!--                            <div class="amount-price-item"><span class="price-icon">$</span>25-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                        <div class="amount-price show__price-tablet">-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>500-->
+                        <!--                            </div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>250-->
+                        <!--                            </div>-->
+                        <!--                            <div class="amount-price-item active"><span class="price-icon">$</span>100</div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>50-->
+                        <!--                            </div>-->
+                        <!--                            <div class="amount-price-item"><span class="price-icon">$</span>25-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
 
                     </div>
 
                     <form class="pick-and-feed-block-form">
                         <div class="dollar-input">
-                            <input type="number" placeholder="Another amount" min="0" maxlength="9999" required>
+                            <input class="price-input" value="100" type="number" onInput="checkLength(4,this)"
+                                   placeholder="Another amount" min="0" maxlength="9999" required>
                             <img class="dollar" src="../../assets/icons/dollar.png" alt="dollar">
                         </div>
                         <div class="radio-input">
@@ -228,11 +252,8 @@
                                 <label for="Once">Once</label>
                             </div>
                         </div>
+                            <button class="button feed-a-friend">Feed a friend now</button>
                     </form>
-
-                    <a href="index.html">
-                        <button class="button feed-a-friend">Feed a friend now</button>
-                    </a>
 
                     <div class="pick-and-feed-block-text">
                         Share with your friends on social networks

@@ -1735,6 +1735,11 @@ input[type='radio']:after {
     top: 10px;
   }
 
+  .price-input.max-length {
+    color: red;
+    background: #FE9013;
+  }
+
   .pick-and-feed-block-text {
     margin: 30px 0 20px 0;
     font-size: 15.5px;

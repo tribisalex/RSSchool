@@ -22,13 +22,10 @@ document.onclick = e => {
     overlay === null ? '' : overlay.classList.add('active');
     overlayDonate === null ? '' : overlayDonate.classList.add('active');
   }
- };
-
-
-
+};
 
 //popap testionials
-testimonialsBlockItem.forEach((item, index) => {
+testimonialsBlockItem.forEach(item => {
   // console.log(testimonialsBlockItem);
   item.addEventListener('click', () => {
     const username = item.querySelector('.testimonials-block-item-username');
@@ -43,3 +40,24 @@ testimonialsBlockItem.forEach((item, index) => {
     textFeedbackModal.textContent = textFeedback.textContent;
   })
 })
+
+//carousel testionials
+var elem = document.querySelector('input[type="range"]');
+var target = document.querySelector('.testimonials-block-row');
+
+function rangeValue() {
+  var newValue = elem.value;
+  if (document.documentElement.clientWidth > 1050) {
+    target.style.left = -(newValue * 269 + newValue * 28).toString() + 'px';
+  }
+  if (document.documentElement.clientWidth > 720 && document.documentElement.clientWidth <= 1050) {
+    target.style.left = -(newValue * 292 + 28 * newValue).toString() + 'px';
+  }
+}
+
+elem.addEventListener("input", rangeValue);
+
+
+
+//carousel pets
+
