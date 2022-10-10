@@ -46,7 +46,6 @@ body.active {
 }
 
 .wrapper {
-  /*position: relative;*/
   margin: 0 auto;
   overflow: hidden;
 }
@@ -67,7 +66,6 @@ body.active {
   font-weight: 500;
   font-size: 16px;
   line-height: 140%;
-  /* or 22px */
   text-align: center;
   text-transform: uppercase;
   color: #FFFFFF;
@@ -286,6 +284,10 @@ body.active {
   left: 140px;
 }
 
+.hide-1400 {
+display: none;
+}
+
 .arrow-right {
   right: 140px;
 }
@@ -429,7 +431,6 @@ body.active {
   margin-top: 69px;
   height: 835px;
   background: rgba(253, 253, 255, 0.52);
-  /*backdrop-filter: blur(2px);*/
   border-radius: 20px;
 }
 
@@ -579,7 +580,6 @@ body.active {
 }
 
 .testimonials-block-row {
-  /*border: 2px solid red;*/
   position: absolute;
   display: flex;
   padding: 0;
@@ -600,10 +600,6 @@ body.active {
   justify-content: start;
 }
 
-.testimonials-hidden {
-  /*display: none;*/
-}
-
 .testimonials-block-item-info {
   margin-top: 15px;
   margin-left: 16px;
@@ -620,7 +616,6 @@ body.active {
   font-weight: 400;
   font-size: 15px;
   line-height: 120%;
-  /* or 19px */
   color: #000000;
 }
 
@@ -629,7 +624,6 @@ body.active {
   width: 3px;
   height: 3px;
   border-radius: 20px;
-  /*border: 2px solid red;*/
   background: #BDBDBD;
 }
 
@@ -637,7 +631,6 @@ body.active {
   font-weight: 300;
   font-size: 15px;
   line-height: 120%;
-  /* identical to box height, or 18px */
   color: #BDBDBD;
   display: flex;
   align-items: center;
@@ -697,7 +690,6 @@ input[type=range]::-webkit-slider-thumb {
   height: 6px;
   -webkit-appearance: none;
 }
-
 
 .pagination-item {
   width: 115.19px;
@@ -798,13 +790,11 @@ input[type=range]::-webkit-slider-thumb {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  /* or 22px */
   color: #4B9200;
   width: 129px;
   margin-top: 14px;
   height: 42px;
   background: #F1F3F2;
-  /* Green */
   border: 1px solid #4B9200;
   border-radius: 5px;
 }
@@ -835,7 +825,6 @@ input[type=range]::-webkit-slider-thumb {
 .donate-for {
   width: 298px;
   height: 54px;
-  /* orange */
   background: linear-gradient(113.96deg, #F9804B 1.49%, #FE9013 101.44%);
   border-radius: 5px;
   margin-top: 35px;
@@ -896,10 +885,8 @@ input[type=range]::-webkit-slider-thumb {
   font-weight: 400;
   font-size: 16px;
   line-height: 140%;
-  /* or 22px */
   color: #FFFFFF;
 }
-
 
 .footer-nav {
   padding: 0;
@@ -918,7 +905,6 @@ input[type=range]::-webkit-slider-thumb {
   font-weight: 100;
   font-size: 16px;
   line-height: 130%;
-  /* identical to box height, or 21px */
   color: #FFFFFF;
 }
 
@@ -955,11 +941,6 @@ input[type=range]::-webkit-slider-thumb {
   .pets-block {
     max-width: 950px;
     height: 801px;
-  }
-
-  .pets-block__row {
-    /*border: 1px solid red;*/
-    /*!*height: 400px;*!*/
   }
 
   .pets-card {
@@ -1102,7 +1083,6 @@ input[type=range]::-webkit-slider-thumb {
     height: 354px;
     border-radius: 5px;
     border: 1px solid #FE9013;
-    /*border-image-source: linear-gradient(113.96deg, #FA6F32 1.49%, #FE9013 101.44%);*/
   }
 
   .arrow {
@@ -1208,7 +1188,6 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .testimonials-block {
-    /*border: 2px solid red;*/
     margin-top: 30px;
     justify-content: space-between;
     height: 400px;
@@ -1223,14 +1202,6 @@ input[type=range]::-webkit-slider-thumb {
     max-width: 350px;
     width: 100%;
     height: 389px;
-  }
-
-  .testimonials-hidden {
-    /*display: block;*/
-  }
-
-  .testimonials-hidden-small {
-    /*display: none;*/
   }
 
   .pagination {
@@ -1332,14 +1303,6 @@ input[type=range]::-webkit-slider-thumb {
     height: 1075px;
     margin-top: 80px;
   }
-
-  /*.show__small {*/
-  /*  display: block;*/
-  /*}*/
-
-  /*.hidden__small {*/
-  /*  display: none;*/
-  /*}*/
 
   .pets-block {
     height: 801px;
@@ -1446,7 +1409,6 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .watch-your-favorite.container {
-    /*margin-top: 34px;*/
     max-width: 730px;
   }
 
@@ -1738,7 +1700,6 @@ input[type=range]::-webkit-slider-thumb {
     display: block;
   }
 
-
   /* footer */
   .footer {
     height: 282px;
@@ -1903,21 +1864,30 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .pets-block {
-    margin: 0 auto;
     height: 1400px;
-    max-width: 400px;
+    max-width: 320px;
     width: 100%;
   }
 
   .pets-block__row {
+    max-width: 320px;
     flex-direction: column;
+    margin: 0 auto;
     align-items: center;
+  }
+
+  .pets-block__row-1, .pets-block__row-2 {
+    max-width: 320px;
   }
 
   .pets-card {
     max-width: 285px;
     height: 330px;
     margin-bottom: 18px;
+  }
+
+  .hide-530 {
+    display: none;
   }
 
   .arrow {
@@ -1943,7 +1913,7 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .choose-your-favorite {
-    margin-top: 1405px;
+    margin-top: 60px;
   }
 
   .palm-photo_tablet {
