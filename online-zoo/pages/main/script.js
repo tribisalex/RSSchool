@@ -118,13 +118,6 @@ const petsBlockRow2 = document.querySelector('.pets-block__row-2');
 arrowRight.addEventListener('click', changeRight);
 arrowLeft.addEventListener('click', changeLeft);
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-}
-
 function changeRight() {
   arrowRight.disabled = true;
   arrowRight.disabled = true;
@@ -236,4 +229,11 @@ function changeLeft() {
     arrowLeft.disabled = false;
     arrowRight.disabled = false;
   }, 700);
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
