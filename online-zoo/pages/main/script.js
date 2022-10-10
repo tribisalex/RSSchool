@@ -58,6 +58,182 @@ function rangeValue() {
 elem.addEventListener("input", rangeValue);
 
 
-
 //carousel pets
+const pets = [
+  {
+    id: '1',
+    image: '../../assets/images/aligate.png',
+    name: 'Alligators',
+    native: 'Native to Antarctica',
+    food_ico: '../../assets/icons/meet-fish_icon.png'
+  },
+  {
+    id: '2',
+    image: '../../assets/images/Gorillas.jpg',
+    name: 'Gorillas',
+    native: 'Native to Congo',
+    food_ico: '../../assets/icons/banana-bamboo_icon.png'
+  },
+  {
+    id: '3',
+    image: '../../assets/images/Panda.jpg',
+    name: 'Giant Pandas',
+    native: 'Native to Southwest China',
+    food_ico: '../../assets/icons/banana-bamboo_icon.png'
+  },
+  {
+    id: '4',
+    image: '../../assets/images/Eagles.jpg',
+    name: 'Eagles',
+    native: 'Native to South America',
+    food_ico: '../../assets/icons/meet-fish_icon.png'
+  }, {
+    id: '5',
+    image: '../../assets/images/Cheetas.jpg',
+    name: 'Cheetahs',
+    native: 'Native to Africa',
+    food_ico: '../../assets/icons/meet-fish_icon.png'
+  },
+  {
+    id: '6',
+    image: '../../assets/images/Penguinis.jpg',
+    name: 'Penguins',
+    native: 'Native to Antarctica',
+    food_ico: '../../assets/icons/meet-fish_icon.png'
+  },
+  {
+    id: '7',
+    image: '../../assets/images/Sloth.jpg',
+    name: 'Two-toed Sloth',
+    native: 'Mesoamerica, South America',
+    food_ico: '../../assets/icons/banana-bamboo_icon.png'
+  },
+]
 
+const arrowLeft = document.querySelector('.arrow-left');
+const arrowRight = document.querySelector('.arrow-right');
+const petsBlockRow1 = document.querySelector('.pets-block__row-1');
+const petsBlockRow2 = document.querySelector('.pets-block__row-2');
+
+arrowRight.addEventListener('click', changeRight);
+arrowLeft.addEventListener('click', changeLeft);
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+}
+
+function changeRight() {
+  arrowRight.disabled = true;
+  arrowRight.disabled = true;
+  let petsList = [...pets];
+  shuffle(petsList);
+  for (let i = 0; i < 3; i++) {
+    let divRow1 = document.createElement('div');
+    divRow1.className = "pets-card";
+    divRow1.innerHTML = `<div class="pets-card-img"><img src="${petsList[i].image}" alt="panda"></div>
+                        <div class="pets-card-description"><div class="pets-card-description-item"><div class="pets-name">${petsList[i].name}</div><div class="pets-native">${petsList[i].native}</div></div>
+                            <div class="herbivore"><img src="${petsList[i].food_ico}" alt="food"></div></div>`;
+    petsBlockRow1.append(divRow1);
+    let divRow2 = document.createElement('div');
+    divRow2.className = "pets-card";
+    divRow2.innerHTML = `<div class="pets-card-img">
+                            <img src="${petsList[i + 3].image}" alt="panda">
+                        </div>
+                        <div class="pets-card-description">
+                            <div class="pets-card-description-item">
+                                <div class="pets-name">${petsList[i + 3].name}</div>
+                                <div class="pets-native">${petsList[i + 3].native}</div>
+                            </div>
+                            <div class="herbivore">
+                                <img src="${petsList[i + 3].food_ico}" alt="food">
+                            </div>
+                        </div>`;
+    petsBlockRow2.append(divRow2);
+  }
+  petsBlockRow1.style.transition = "700ms";
+  petsBlockRow2.style.transition = "700ms";
+  petsBlockRow1.style.transform = "translateX(-50%)";
+  petsBlockRow2.style.transform = "translateX(-50%)";
+
+  setTimeout(() => {
+    petsBlockRow1.firstElementChild.remove();
+    petsBlockRow1.firstElementChild.remove();
+    petsBlockRow1.firstElementChild.remove();
+    petsBlockRow2.firstElementChild.remove();
+    petsBlockRow2.firstElementChild.remove();
+    petsBlockRow2.firstElementChild.remove();
+    petsBlockRow1.style.transition = "0ms";
+    petsBlockRow2.style.transition = "0ms";
+    petsBlockRow1.style.transform = "translateX(0%)";
+    petsBlockRow2.style.transform = "translateX(0%)";
+    arrowRight.disabled = false;
+    arrowLeft.disabled = false;
+  }, 700);
+}
+
+function changeLeft() {
+  arrowLeft.disabled = true;
+  arrowRight.disabled = true;
+  let petsList = [...pets];
+  shuffle(petsList);
+  petsBlockRow1.style.transition = "0ms";
+  petsBlockRow2.style.transition = "0ms";
+  petsBlockRow1.style.transform = "translateX(-50%)";
+  petsBlockRow2.style.transform = "translateX(-50%)";
+
+  for (let i = 0; i < 3; i++) {
+    let divRow1 = document.createElement('div');
+    divRow1.className = "pets-card";
+    divRow1.innerHTML = `<div class="pets-card-img">
+                            <img src="${petsList[i].image}" alt="panda">
+                        </div>
+                        <div class="pets-card-description">
+                            <div class="pets-card-description-item">
+                                <div class="pets-name">${petsList[i].name}</div>
+                                <div class="pets-native">${petsList[i].native}</div>
+                            </div>
+                            <div class="herbivore">
+                                <img src="${petsList[i].food_ico}" alt="food">
+                            </div>
+                     </div>`;
+    petsBlockRow1.prepend(divRow1);
+    let divRow2 = document.createElement('div');
+    divRow2.className = "pets-card";
+    divRow2.innerHTML = `<div class="pets-card-img">
+                            <img src="${petsList[i + 3].image}" alt="panda">
+                        </div>
+                        <div class="pets-card-description">
+                            <div class="pets-card-description-item">
+                                <div class="pets-name">${petsList[i + 3].name}</div>
+                                <div class="pets-native">${petsList[i + 3].native}</div>
+                            </div>
+                            <div class="herbivore">
+                                <img src="${petsList[i + 3].food_ico}" alt="food">
+                            </div>
+                        </div>`;
+    petsBlockRow2.prepend(divRow2);
+  }
+
+  setTimeout(() => {
+    petsBlockRow1.style.transition = "700ms";
+    petsBlockRow2.style.transition = "700ms";
+    petsBlockRow1.style.transform = "translateX(0%)";
+    petsBlockRow2.style.transform = "translateX(0%)";
+  }, 0);
+
+  setTimeout(() => {
+    petsBlockRow1.lastElementChild.remove();
+    petsBlockRow1.lastElementChild.remove();
+    petsBlockRow1.lastElementChild.remove();
+    petsBlockRow2.lastElementChild.remove();
+    petsBlockRow2.lastElementChild.remove();
+    petsBlockRow2.lastElementChild.remove();
+    petsBlockRow1.style.transition = "0ms";
+    petsBlockRow2.style.transition = "0ms";
+    arrowLeft.disabled = false;
+    arrowRight.disabled = false;
+  }, 700);
+}

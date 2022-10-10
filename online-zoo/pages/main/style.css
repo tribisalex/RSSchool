@@ -224,27 +224,37 @@ body.active {
   justify-content: start;
 }
 
-.hidden__small {
-  display: none;
-}
-
 .pets-block {
   height: 878px;
   display: flex;
   flex-direction: column;
   align-content: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .pets-block__row {
+  position: absolute;
   margin: 0;
-  justify-content: start;
+  justify-content: center;
   display: flex;
   align-items: center;
+  z-index: 0;
+}
+
+.pets-block__row-1 {
+  left: 0;
+  top: 0;
+}
+
+.pets-block__row-2 {
+  left: 0;
+  bottom: 0;
 }
 
 .pets-card {
-  margin: 0 14px;
+  margin: 0;
+  margin-right: 28px;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -255,6 +265,7 @@ body.active {
 }
 
 .arrow {
+  z-index: 100;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -936,16 +947,19 @@ input[type=range]::-webkit-slider-thumb {
 
   /* Pets */
   .pets {
-    position: relative;
     height: 1075px;
     margin-top: 142px;
+    align-items: center;
   }
 
   .pets-block {
-    position: absolute;
-    max-width: 1265px;
+    max-width: 950px;
     height: 801px;
-    left: 0;
+  }
+
+  .pets-block__row {
+    /*border: 1px solid red;*/
+    /*!*height: 400px;*!*/
   }
 
   .pets-card {
@@ -988,7 +1002,7 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .choose-your-favorite {
-    margin-top: 881px;
+    margin-top: 80px;
   }
 
   .palm-photo {
@@ -1079,7 +1093,7 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .pets-block {
-    max-width: 1265px;
+    max-width: 950px;
     height: 801px;
   }
 
@@ -1124,7 +1138,7 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .choose-your-favorite {
-    margin-top: 882px;
+    margin-top: 80px;
   }
 
   .palm-photo {
@@ -1283,26 +1297,6 @@ input[type=range]::-webkit-slider-thumb {
     padding: 0;
   }
 
-  /*.header-container {*/
-  /*  max-width: 930px;*/
-  /*}*/
-  /*.header_logo {*/
-  /*  margin-left: 10px;*/
-  /*}*/
-  /*.header_logo img {*/
-  /*  width: 82px;*/
-  /*  height: 52px;*/
-  /*  margin: 0 20px 0 0;*/
-  /*}*/
-  /*.nav-ul {*/
-  /*  width: 431px;*/
-  /*  margin-right: 0;*/
-  /*}*/
-  /*.nav-item {*/
-  /*  font-weight: 500;*/
-  /*  font-size: 16px;*/
-  /*  line-height: 140%;*/
-  /*}*/
   .background-wrapper-top {
     background: url('../../assets/images/Giant_Panda.png') no-repeat top left;
   }
@@ -1339,13 +1333,13 @@ input[type=range]::-webkit-slider-thumb {
     margin-top: 80px;
   }
 
-  .show__small {
-    display: block;
-  }
+  /*.show__small {*/
+  /*  display: block;*/
+  /*}*/
 
-  .hidden__small {
-    display: none;
-  }
+  /*.hidden__small {*/
+  /*  display: none;*/
+  /*}*/
 
   .pets-block {
     height: 801px;
@@ -1446,64 +1440,6 @@ input[type=range]::-webkit-slider-thumb {
     transition: all 0s ease;
   }
 
-
-  /*.header {*/
-  /*  max-width: 730px;*/
-  /*  width: 100%;*/
-  /*  position: fixed;*/
-  /*  z-index: 100;*/
-  /*}*/
-
-  /*.header-container {*/
-  /*  background-color: #111115;*/
-  /*  max-width: 599.93px;*/
-  /*  height: 34px;*/
-  /*}*/
-
-  /*.header_logo {*/
-  /*  margin-left: 0;*/
-  /*}*/
-
-  /*.header-logo__img__small {*/
-  /*  display: block;*/
-  /*}*/
-
-  /*.header-logo__img {*/
-  /*  display: none;*/
-  /*}*/
-
-  /*.header_logo img {*/
-  /*  width: 46.93px;*/
-  /*  height: 29.03px;*/
-  /*  margin: 0 20px 0 0;*/
-  /*}*/
-
-  /*.menu-burger {*/
-  /*  position: relative; !* задаем относительное позиционирование *!*/
-  /*  display: block;*/
-  /*  margin-left: 0;*/
-  /*  margin-right: 10px;*/
-  /*  cursor: pointer;*/
-  /*}*/
-
-  /*.nav {*/
-  /*  display: none;*/
-  /*  !*position: absolute;*!*/
-  /*  !*top: 5px;*!*/
-  /*  !*background: #F2785C;*!*/
-  /*  !*box-shadow: 0 4px 3px rgba(13, 96, 111, 0.25);*!*/
-  /*  !*border-radius: 10px;*!*/
-  /*  !*width: 165px;*!*/
-  /*  !*height: 250px;*!*/
-  /*  !*right: -200px;*!*/
-  /*  !*z-index: 1999;*!*/
-  /*  !*transition: all 0.4s ease;*!*/
-  /*}*/
-
-  /*.designed {*/
-  /*  display: none;*/
-  /*}*/
-
   .watch-your-favorite {
     padding-top: 34px;
     height: 339px;
@@ -1597,9 +1533,10 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .pets-block {
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     height: 756px;
-    max-width: 1230px;
+    max-width: 602px;
   }
 
   .pets-card {
@@ -1620,7 +1557,7 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .choose-your-favorite {
-    margin-top: 816px;
+    margin-top: 60px;
   }
 
   .palm-photo_tablet {
@@ -1875,26 +1812,7 @@ input[type=range]::-webkit-slider-thumb {
   .container {
     max-width: 530px;
   }
-
-  /*.header-container {*/
-  /*  max-width: 299.93px;*/
-  /*}*/
-  /*.menu-burger {*/
-  /*  margin-right: 0;*/
-  /*}*/
-  /*.nav {*/
-  /*  display: none;*/
-  /*  !*position: absolute;*!*/
-  /*  !*top: 5px;*!*/
-  /*  !*background: #F2785C;*!*/
-  /*  !*box-shadow: 0 4px 3px rgba(13, 96, 111, 0.25);*!*/
-  /*  !*border-radius: 10px;*!*/
-  /*  !*width: 165px;*!*/
-  /*  !*height: 250px;*!*/
-  /*  !*right: -200px;*!*/
-  /*  !*z-index: 1999;*!*/
-  /*  !*transition: all 0.4s ease;*!*/
-  /*}*/
+  
   .watch-your-favorite {
     height: 265px;
   }
@@ -1985,11 +1903,7 @@ input[type=range]::-webkit-slider-thumb {
   }
 
   .pets-block {
-    margin-top: 0;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
+    margin: 0 auto;
     height: 1400px;
     max-width: 400px;
     width: 100%;
