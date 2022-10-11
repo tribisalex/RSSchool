@@ -118,7 +118,7 @@ const petsBlockRow2 = document.querySelector('.pets-block__row-2');
 arrowRight.addEventListener('click', changeRight);
 arrowLeft.addEventListener('click', changeLeft);
 
-function changeRight() {
+function changeRight () {
   arrowRight.disabled = true;
   arrowRight.disabled = true;
   let petsList = [...pets];

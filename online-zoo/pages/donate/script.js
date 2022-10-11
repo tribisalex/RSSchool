@@ -26,6 +26,8 @@ priceInput.addEventListener('change', () => {
   inputRadio.forEach(item => {
     if (priceInput.value === item.value) {
       item.checked = true;
+    } else {
+      item.checked = false;
     }
   })
 })
