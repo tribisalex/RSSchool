@@ -32,6 +32,7 @@
 }
 
 body {
+  margin: 0 auto;
   position: relative;
   background: #E5E5E5;
   font-family: 'Roboto', sans-serif;
@@ -263,6 +264,7 @@ body.active {
 }
 
 .arrow {
+  border: none;
   z-index: 100;
   cursor: pointer;
   display: flex;
