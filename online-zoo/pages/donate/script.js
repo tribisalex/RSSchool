@@ -22,7 +22,7 @@ amountSlider.addEventListener('click', () => {
   })
 })
 
-priceInput.addEventListener('change', () => {
+priceInput.addEventListener('input', () => {
   inputRadio.forEach(item => {
     if (priceInput.value === item.value) {
       item.checked = true;
