@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>The gem puzzle</title>
+    <link rel="shortcut icon" href="assets/icons/favicon.png" type="image/png">
+    <link href="assets/styles/normalize.css" rel="stylesheet">
+    <link href="assets/styles/style.css" rel="stylesheet">
+    <script src="assets/index.js" defer></script>
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <nav class="nav" id="nav">
+            <ul class="nav-ul">
+                <li class="nav-item" id="shuffle">
+                    <div class="shuffle-button" id="shuffle_button">Shuffle and start</div>
+                </li>
+                <li class="nav-item active" id="stop">
+                    <div class="stop-button" id="stop_button">Stop</div>
+                </li>
+                <li class="nav-item" id="save">
+                    <div class="save-button" id="save_button">Save</div>
+                </li>
+                <li class="nav-item" id="results">
+                    <div class="result-button" id="results_button">Results</div>
+                </li>
+            </ul>
+        </nav>
+        <div class="menu-burger" id="menuburger">
+            <img class="menu-burger__item"
+                 id="menuburger_item"
+                 src="assets/icons/burger_menu.png"
+                 alt="menu icon">
+        </div>
+    </header>
+    <main class="main">
+        <div class="game-info">
+            <div class="moves">
+                <div class="moves__label">Moves:</div>
+                <div class="moves__value"></div>
+            </div>
+            <div class="time">
+                <div class="time__label">Time:</div>
+                <div class="time__value"></div>
+            </div>
+        </div>
+        <canvas id="canvas"></canvas>
+        <div class="game-info">
+            <div class="frame__size">
+                <div class="frame__size-label"> Frame size:</div>
+                <div class="frame__size-name"></div>
+            </div>
+        </div>
+
+        <div class="sounds-choice">
+            <label for="sound">Sound</label>
+            <select id="sound">
+                <option selected value="On">On</option>
+                <option value="Off">Off</option>
+            </select>
+        </div>
+        <div class="choice__size">
+            <div class="choice__size-label">Other sizes:</div>
+            <div class="choice__size-item">3 x 3</div>
+            <div class="choice__size-item active">4 x 4</div>
+            <div class="choice__size-item">5 x 5</div>
+            <div class="choice__size-item">6 x 6</div>
+            <div class="choice__size-item">7 x 7</div>
+            <div class="choice__size-item">8 x 8</div>
+        </div>
+    </main>
+    <div class="overlay" id="overlay"></div>
+    <div class="winner__popap">
+        <img src="assets/icons/close.png" alt="close" id="close" class="close">
+        <div class="popap-text"></div>
+    </div>
+</div>
+</body>
+</html>
