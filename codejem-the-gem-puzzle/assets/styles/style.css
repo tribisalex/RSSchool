@@ -26,7 +26,6 @@ body.active {
 }
 
 .wrapper {
-  /*border: 2px solid red;*/
   margin: 0 auto;
   overflow: hidden;
 }
@@ -63,15 +62,12 @@ body.active {
 
 .nav {
   width: 100%;
-  /*border: 2px solid red;*/
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .nav-ul {
-  /*border: 2px solid red;*/
-  /*max-width: 750px;*/
   display: flex;
   list-style: none;
   max-width: 600px;
@@ -82,7 +78,6 @@ body.active {
 }
 
 .nav-item {
-  /*border: 1px solid green;*/
   margin: 0;
   width: 120px;
   background-color: #0d9095;
@@ -130,14 +125,12 @@ body.active {
   margin-right: 10px;
 }
 
-
 .choice__size {
   width: 90%;
   margin-right: 20px;
   margin-left: 20px;
   margin-top: 20px;
   max-width: 400px;
-  /*margin-top: 20px;*/
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -160,7 +153,6 @@ body.active {
 .choice__size-item.active {
   background-color: #666666;
 }
-
 
 .winner__popap {
   width: 320px;
@@ -201,14 +193,43 @@ body.active {
   text-align: center;
 }
 
+.results__popap {
+  width: 320px;
+  height: 320px;
+  padding: 15px;
+  position: absolute;
+  display: none;
+}
+
+.results__popap.active {
+  margin: 0 auto;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  background: #F5F7F6;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  z-index: 5000;
+  transition: all 0s ease;
+}
+
+
 @media (max-width: 640px) {
   .header {
     justify-content: end;
-
   }
 
   .menu-burger {
-    position: relative; /* задаем относительное позиционирование */
+    position: relative;
     display: block;
     margin-left: 0;
     margin-right: 10px;

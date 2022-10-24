@@ -1,6 +1,8 @@
 // menu
 const nav = document.getElementById('nav');
 const winnerPopap = document.querySelector('.winner__popap');
+const resultPopap = document.querySelector('.results__popap');
+const resultOl = document.querySelector('.result-ol');
 const overlay = document.querySelector('.overlay');
 const popapText = document.querySelector('.popap-text');
 const soundsChoice = document.getElementById('sound');
@@ -10,13 +12,13 @@ soundsChoice.addEventListener('input', () => {
   soundsChoice.value === 'On' ? isSoundOn = true : isSoundOn = false;
 })
 
-
-
+// sound bip
 function playBip() {
   var audio = new Audio('assets/sounds/01.mp3');
   audio.play();
 }
 
+// sound winner
 function playWinner() {
   var audio = new Audio('assets/sounds/02.mp3');
   audio.play();
@@ -25,15 +27,15 @@ function playWinner() {
 let canvas = document.getElementById("canvas");
 canvas.width = 320;
 canvas.height = 320;
-
 let int = null;
-
 const navItem = document.querySelectorAll('.nav-item');
 const choiceSizeItem = document.querySelectorAll('.choice__size-item');
 let activeNav = document.querySelector('.nav-item.active') || navItem[0];
 let activeSize = document.querySelector('.choice__size-item.active') || choiceSizeItem[0];
 let sizeLabel = document.querySelector('.frame__size-name');
-let sizePuzzle = 4;
+let sizePuzzle;
+// localStorage.sizePuzzle ? sizePuzzle = localStorage.sizePuzzle :
+sizePuzzle = 4;
 
 sizeLabel.textContent = '4 x 4';
 
@@ -65,31 +67,38 @@ function toggleActiveSize() {
   moves.textContent = 0;
 }
 
-
 document.onclick = e => {
-  if (e.target.id === 'overlay' || e.target.id === 'close') {
+  if (e.target.id === 'overlay' || e.target.id === 'close' || e.target.id === 'close-results') {
     document.body.classList.remove('active');
     overlay.classList.remove('active');
     winnerPopap.classList.remove('active');
+    resultPopap.classList.remove('active');
+    startShuffle();
   } else if (e.target.id === 'menuburger_item' || e.target.id === 'menuburger') {
     nav.classList.add('active');
   } else if (e.target.id === 'stop' || e.target.id === 'stop_button') {
     nav.classList.remove('active');
+    localStorage.clear();
     clearInterval(int);
   } else if (e.target.id === 'shuffle' || e.target.id === 'shuffle_button') {
+
     // start timer
     clearInterval(int);
     [seconds, minutes] = [0, 0];
     timerRef.textContent = '00 : 00';
     int = setInterval(timer, 1000);
-    moves.textContent = 0;
+    moves.textContent = '0';
     nav.classList.remove('active');
+
     // shuffle puzzle
     startShuffle();
   } else if (e.target.id === 'save' || e.target.id === 'save_button') {
     nav.classList.remove('active');
   } else if (e.target.id === 'results' || e.target.id === 'results_button') {
     nav.classList.remove('active');
+    document.body.classList.add('active');
+    overlay.classList.add('active');
+    resultPopap.classList.add('active');
   } else {
     nav.classList.remove('active');
   }
@@ -98,8 +107,8 @@ document.onclick = e => {
 // timer
 let timerRef = document.querySelector(".time__value");
 let moves = document.querySelector(".moves__value");
-timerRef.textContent = '00 : 00';
-moves.textContent = '0';
+localStorage.time ? timerRef.textContent = localStorage.time : timerRef.textContent = '00 : 00';
+localStorage.moves ? moves.textContent = localStorage.moves : moves.textContent = '0';
 
 let [seconds, minutes] = [0, 0];
 
@@ -115,7 +124,6 @@ function timer() {
 
   timerRef.textContent = ` ${m} : ${s}`;
 }
-
 
 // canvas game
 function getBool() {
@@ -195,7 +203,7 @@ function TagGame(context, cellSize) {
   this.context = context;
   this.cellSize = cellSize;
 
-  this.clicks = 0;
+  localStorage.moves ? this.clicks = localStorage.moves : this.clicks = 0;
 }
 
 TagGame.prototype.getMoves = function () {
@@ -251,9 +259,7 @@ TagGame.prototype.move = function (x, y) {
   let nullCell = this.getNullCell();
   let canMoveVertical = (x - 1 === nullCell.x || x + 1 === nullCell.x) && y === nullCell.y;
   let canMoveHorizontal = (y - 1 === nullCell.y || y + 1 === nullCell.y) && x === nullCell.x;
-
   if (canMoveVertical || canMoveHorizontal) {
-    // playBip();
     this.state[nullCell.y][nullCell.x] = this.state[y][x];
     this.state[y][x] = 0;
     this.clicks++;
@@ -263,9 +269,18 @@ TagGame.prototype.move = function (x, y) {
 TagGame.prototype.winners = function () {
   let combination;
   if (sizePuzzle === 3) {
-    combination = [[1, 2, 3], [4, 5, 6], [7, 8, 0]]
+    combination = [
+      [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 0]
+    ]
   } else if (sizePuzzle === 4) {
-    combination = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]];
+    combination = [
+      [1, 2, 3, 4],
+      [5, 6, 7, 8],
+      [9, 10, 11, 12],
+      [13, 14, 15, 0]
+    ];
   } else if (sizePuzzle === 5) {
     combination = [
       [1, 2, 3, 4, 5],
@@ -351,32 +366,26 @@ TagGame.prototype.mix = function (count) {
         x = nullCell.x + 1;
       }
     }
-
     if (0 <= x && x <= sizePuzzle - 1 && 0 <= y && y <= sizePuzzle - 1) {
       this.move(x, y);
     }
   }
-
-  this.clicks = 0;
+  this.clicks = localStorage.moves;
 };
 
 const startShuffle = () => {
   let context = canvas.getContext("2d");
   context.fillStyle = '#aaaaaa';
   context.fillRect(0, 0, canvas.width, canvas.height);
-
   let cellSize = canvas.width / sizePuzzle;
-
   let tagGame = new TagGame(context, cellSize);
   tagGame.mix(300);
   tagGame.draw();
-
   canvas.onclick = function (e) {
     let x = (e.pageX - canvas.offsetLeft) / cellSize | 0;
     let y = (e.pageY - canvas.offsetTop) / cellSize | 0;
     onEvent(x, y);
   };
-
   canvas.ontouchend = function (e) {
     let x = (e.touches[0].pageX - canvas.offsetLeft) / cellSize | 0;
     let y = (e.touches[0].pageY - canvas.offsetTop) / cellSize | 0;
@@ -384,11 +393,7 @@ const startShuffle = () => {
   };
 
   function onEvent(x, y) {
-    // setTimeout(() => {
-      tagGame.move(x, y);
-    // }, 20);
-
-
+    tagGame.move(x, y);
     if (isSoundOn) {
       playBip();
     }
@@ -401,11 +406,20 @@ const startShuffle = () => {
       winnerPopap.classList.add('active');
       popapText.textContent = "Hooray! You solved the puzzle in " + timerRef.textContent + " and " + tagGame.getMoves() + " moves!";
       clearInterval(int);
+      localStorage.clear();
+      let li = document.createElement('li');
+      li.textContent = timerRef.textContent + "; " + tagGame.getMoves() + " moves!" + "; " + "Frame size: " + sizePuzzle;
+      resultOl.append(li);
       if (isSoundOn) {
         playWinner();
       }
     }
+    localStorage.setItem('state', this.state);
+    localStorage.setItem('time', timerRef.textContent);
+    localStorage.setItem('sound', isSoundOn);
+    localStorage.setItem('sizePuzzle', sizePuzzle);
     moves.textContent = tagGame.getMoves();
+    localStorage.setItem('moves', moves.textContent);
   }
 }
 
