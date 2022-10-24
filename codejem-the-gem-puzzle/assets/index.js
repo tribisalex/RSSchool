@@ -33,9 +33,7 @@ const choiceSizeItem = document.querySelectorAll('.choice__size-item');
 let activeNav = document.querySelector('.nav-item.active') || navItem[0];
 let activeSize = document.querySelector('.choice__size-item.active') || choiceSizeItem[0];
 let sizeLabel = document.querySelector('.frame__size-name');
-let sizePuzzle;
-// localStorage.sizePuzzle ? sizePuzzle = localStorage.sizePuzzle :
-sizePuzzle = 4;
+let sizePuzzle = 4;
 
 sizeLabel.textContent = '4 x 4';
 
@@ -370,7 +368,7 @@ TagGame.prototype.mix = function (count) {
       this.move(x, y);
     }
   }
-  this.clicks = localStorage.moves;
+  localStorage.moves ? this.clicks = localStorage.moves : this.clicks = 0;
 };
 
 const startShuffle = () => {
@@ -414,10 +412,7 @@ const startShuffle = () => {
         playWinner();
       }
     }
-    localStorage.setItem('state', this.state);
     localStorage.setItem('time', timerRef.textContent);
-    localStorage.setItem('sound', isSoundOn);
-    localStorage.setItem('sizePuzzle', sizePuzzle);
     moves.textContent = tagGame.getMoves();
     localStorage.setItem('moves', moves.textContent);
   }
