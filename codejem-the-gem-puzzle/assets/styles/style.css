@@ -222,7 +222,6 @@ body.active {
   transition: all 0s ease;
 }
 
-
 @media (max-width: 640px) {
   .header {
     justify-content: end;
