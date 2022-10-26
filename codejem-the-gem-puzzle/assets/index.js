@@ -7,9 +7,22 @@ const overlay = document.querySelector('.overlay');
 const popapText = document.querySelector('.popap-text');
 const soundsChoice = document.getElementById('sound');
 let isSoundOn = true;
+let resultArr;
+
+if (localStorage.results) {
+  resultArr = JSON.parse(localStorage.getItem("results"));
+  for (let i = 0; i < resultArr.length; i++) {
+    let li = document.createElement('li');
+    li.textContent = resultArr[i];
+    resultOl.append(li);
+  }
+} else {
+  resultArr = [];
+}
 
 soundsChoice.addEventListener('input', () => {
   soundsChoice.value === 'On' ? isSoundOn = true : isSoundOn = false;
+  localStorage.setItem('sounds', soundsChoice.value);
 })
 
 // sound bip
@@ -74,12 +87,13 @@ document.onclick = e => {
     startShuffle();
   } else if (e.target.id === 'menuburger_item' || e.target.id === 'menuburger') {
     nav.classList.add('active');
-  } else if (e.target.id === 'stop' || e.target.id === 'stop_button') {
-    nav.classList.remove('active');
-    localStorage.clear();
-    clearInterval(int);
-  } else if (e.target.id === 'shuffle' || e.target.id === 'shuffle_button') {
-
+  }
+    // else if (e.target.id === 'stop' || e.target.id === 'stop_button') {
+    //   nav.classList.remove('active');
+    //   localStorage.clear();
+    //   clearInterval(int);
+  // }
+  else if (e.target.id === 'shuffle' || e.target.id === 'shuffle_button') {
     // start timer
     clearInterval(int);
     [seconds, minutes] = [0, 0];
@@ -87,7 +101,6 @@ document.onclick = e => {
     int = setInterval(timer, 1000);
     moves.textContent = '0';
     nav.classList.remove('active');
-
     // shuffle puzzle
     startShuffle();
   } else if (e.target.id === 'save' || e.target.id === 'save_button') {
@@ -201,7 +214,8 @@ function TagGame(context, cellSize) {
   this.context = context;
   this.cellSize = cellSize;
 
-  localStorage.moves ? this.clicks = localStorage.moves : this.clicks = 0;
+  // localStorage.moves ? this.clicks = localStorage.moves :
+  this.clicks = 0;
 }
 
 TagGame.prototype.getMoves = function () {
@@ -368,7 +382,8 @@ TagGame.prototype.mix = function (count) {
       this.move(x, y);
     }
   }
-  localStorage.moves ? this.clicks = localStorage.moves : this.clicks = 0;
+  // localStorage.moves ? this.clicks = localStorage.moves :
+  this.clicks = 0;
 };
 
 const startShuffle = () => {
@@ -404,10 +419,11 @@ const startShuffle = () => {
       winnerPopap.classList.add('active');
       popapText.textContent = "Hooray! You solved the puzzle in " + timerRef.textContent + " and " + tagGame.getMoves() + " moves!";
       clearInterval(int);
-      localStorage.clear();
       let li = document.createElement('li');
       li.textContent = timerRef.textContent + "; " + tagGame.getMoves() + " moves!" + "; " + "Frame size: " + sizePuzzle;
       resultOl.append(li);
+      resultArr.push(li.textContent);
+      localStorage.setItem('results', JSON.stringify(resultArr));
       if (isSoundOn) {
         playWinner();
       }
@@ -419,5 +435,13 @@ const startShuffle = () => {
 }
 
 window.onload = function () {
+  clearInterval(int);
+  [seconds, minutes] = [0, 0];
+  timerRef.textContent = '00 : 00';
+  int = setInterval(timer, 1000);
+  moves.textContent = '0';
+  nav.classList.remove('active');
+
+  // shuffle puzzle
   startShuffle();
 }
