@@ -18,6 +18,13 @@
         </a>
       </div>
       <div class="header__score">Score:</div>
+      <div class="lang">
+        <label for="select"></label>
+        <select id="select" class="select-lang">
+          <option class="select-item" selected>Ru</option>
+          <option class="select-item">En</option>
+        </select>
+      </div>
     </div>
     <nav class="nav">
       <ul class="nav__ul">
@@ -30,7 +37,17 @@
       </ul>
     </nav>
   </header>
+  
   <main>
+    
+    <section class="result-quiz hide">
+      <h1 class="result-quiz__h1">Поздравляем с прохождением викторины</h1>
+      <div class="result-quiz__name">Ваш результат:</div>
+      <div class="result-quiz__score">30</div>
+      <div>
+        <a href="quiz-page.html" class="start-quiz__button">Start the quiz</a>
+      </div>
+    </section>
     
     <section class="question">
       <div class="question__image-block">
@@ -38,17 +55,6 @@
       </div>
       <div class="question__description">
         <h1 class="question__description-name">Ворон</h1>
-        
-        
-        <!--        <audio src=""></audio>-->
-        <!--        <div id="controls">-->
-        <!--          <div class="audio-track"><div class="time"></div></div>-->
-        <!--          <button class="play">Play</button>-->
-        <!--          <button class="pause">Pause</button>-->
-        <!--          <button class="prev">&#60;prev</button>-->
-        <!--          <button class="next">next&#62;</button>-->
-        <!--        </div>-->
-        
         
         <div class="question__description-audio">
           <div class="audio-player">
@@ -111,7 +117,8 @@
       </ul>
       
       <div class="answer-block__content">
-        <div class="answer-block__content-intro">
+        <div class="answer-block__content__plug">Прослушайте плеер и выберите вариант ответа...</div>
+        <div class="answer-block__content-intro hide">
           <div class="answer-block__content__image-block">
             <img src="../assets/images/plug.jpg" class="answer-block__description__image-block__img" alt="bird image">
           </div>
@@ -123,7 +130,7 @@
               <div class="audio-player__answer">
                 <div class="player-controls">
                   <div class="player-controls-btn">
-                    <button class="play player-icon"></button>
+                    <button class="play__answer player-icon"></button>
                   </div>
                 </div>
                 <div class="player-controls__range">
@@ -138,7 +145,7 @@
                     </div>
                     <div class="volume-container">
                       <div class="volume-button">
-                        <div class="volume icono-volumeMedium"></div>
+                        <div class="volume mute"></div>
                       </div>
                       <div class="volume-slider">
                         <div class="volume-percentage"></div>
@@ -150,7 +157,7 @@
             </div>
           </div>
         </div>
-        <div class="answer-block__content-text">
+        <div class="answer-block__content-text hide">
           Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны
           населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра,
           монархия рухнет.
