@@ -565,6 +565,12 @@ opacity: 0;
   color: #dcf3fb;
 }
 
+.next-level__button:disabled {
+  background-color: #55bf94;
+  border: 2px solid #dcf3fb;
+  color: #ffffff;
+}
+
 .start-quiz__button {
   text-decoration: none;
   color: #55bf94;
