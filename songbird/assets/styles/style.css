@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'Aquarelle';
-  src: url("../fonts/Aquarelle/Aquarelle.ttf"); /* Путь к файлу со шрифтом */
+  src: url("../fonts/Aquarelle/Aquarelle.ttf");
 }
 
 @font-face {
   font-family: 'Gabriola';
-  src: url("../fonts/Gabriola/Gabriola.ttf"); /* Путь к файлу со шрифтом */
+  src: url("../fonts/Gabriola/gabriola.ttf");
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url("../fonts/Roboto-Regular.ttf"); /* Путь к файлу со шрифтом */
+  src: url("../fonts/Roboto-Regular.ttf");
 }
 
 *,
@@ -30,7 +30,7 @@ body {
   background-color: #55bf94;
   font-size: 22px;
   margin: 0;
-  font-family: "Gabriola", sans-serif;
+  font-family: "Monotype Corsiva", sans-serif;
 }
 
 body.active {
