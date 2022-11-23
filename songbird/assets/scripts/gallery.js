@@ -624,7 +624,6 @@ document.onclick = e => {
   }
 };
 
-
 gallery.addEventListener('click', () => {
   for (let i = 0; i <= birdsDataGallery.length - 1; i++) {
     for (let j = 0; j <= birdsDataGallery[i].length - 1; j++) {
@@ -639,7 +638,7 @@ gallery.addEventListener('click', () => {
 
 galleryListItem.forEach(item => {
   item.addEventListener('click', () => {
-    console.log('1651')
+    console.log('1651');
     // audioPlayer(audioSrcAnswer, audioPlayerAnswer, audioAnswer, playAnswer, timeline[1], volumeSlider[1], volumePer[1], progressBar[1], volumeBut[1]);
   })
 });
