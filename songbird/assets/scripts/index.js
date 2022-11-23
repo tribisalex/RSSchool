@@ -852,10 +852,10 @@ const selectedAnswersCircle = document.querySelectorAll('.answer-block__circle')
 
 answerBlockOptions.forEach(item => {
   item.addEventListener('click', () => {
-    countClick--;
     showAnswerDescription();
     selectedAnswer = item.querySelector('.answer-block__options-item__name').textContent;
     selectedAnswerCircle = item.querySelector('.answer-block__circle');
+    if (!selectedAnswerCircle.classList.contains('mistake')) countClick--;
     for (let i = 0; i <= activeBirds.length - 1; i++) {
       if (selectedAnswer === activeBirds[i].name) {
         selectedBird = activeBirds[i];
