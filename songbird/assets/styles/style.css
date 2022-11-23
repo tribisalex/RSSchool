@@ -28,7 +28,7 @@ html {
 
 body {
   background-color: #55bf94;
-  font-size: 28px;
+  font-size: 22px;
   margin: 0;
   font-family: "Gabriola", sans-serif;
 }
@@ -257,7 +257,7 @@ body.active {
   width: 100px;
   height: 100px;
   border: 2px solid #559b16;
-  font-size: 65px;
+  font-size: 45px;
   font-weight: bolder;
   text-decoration: underline;
   margin-bottom: 20px;
@@ -347,7 +347,7 @@ body.active {
   box-shadow: 0 1px 3px 0 #55bf94;
 }
 
-.player-controls-time{
+.player-controls-time {
   /*border: 2px solid grey;*/
 }
 
@@ -546,7 +546,7 @@ body.active {
 }
 
 .answer-block__options-item:nth-last-child(1):after {
-opacity: 0;
+  opacity: 0;
 }
 
 .answer-block__options-item.active {
@@ -734,7 +734,7 @@ opacity: 0;
   }
 
   .nav__ul {
-    font-size: 24px;
+    font-size: 16px;
   }
 
   .answer-block__options-item {
@@ -796,7 +796,6 @@ opacity: 0;
   }
 
 
-
 }
 
 @media (max-width: 605px) {
@@ -832,7 +831,7 @@ opacity: 0;
   }
 
   .answer-block__content-text {
-    font-size: 21px;
+    font-size: 18px;
   }
 
   .nav__ul-item {
@@ -841,7 +840,7 @@ opacity: 0;
   }
 
   .nav__ul {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .nav__ul-item {
@@ -877,7 +876,7 @@ opacity: 0;
   }
 
   .nav__ul {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .nav__ul-item:nth-child(4) {
@@ -900,5 +899,4 @@ opacity: 0;
   .answer-block__content-description {
     text-align: center;
   }
-
 }
