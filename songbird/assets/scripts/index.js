@@ -849,14 +849,10 @@ nextLevel.addEventListener('click', () => {
 })
 
 const selectedAnswersCircle = document.querySelectorAll('.answer-block__circle');
-let arr = [];
+
 answerBlockOptions.forEach(item => {
   item.addEventListener('click', () => {
-    // arr.push(item.querySelector('.answer-block__options-item__name').textContent);
-    // if (!arr.includes(item.querySelector('.answer-block__options-item__name').textContent)) {
-    //   countClick--;
-    //   console.log(item.querySelector('.answer-block__options-item__name').textContent);
-    // }
+    countClick--;
     showAnswerDescription();
     selectedAnswer = item.querySelector('.answer-block__options-item__name').textContent;
     selectedAnswerCircle = item.querySelector('.answer-block__circle');
