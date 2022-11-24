@@ -582,6 +582,8 @@ const birdsDataGalleryEn = [
 
 let birdsDataGallery = currentLang === 'Ru' ? birdsDataGalleryRu : birdsDataGalleryEn;
 
+
+
 const gallery = document.querySelector('.gallery-text');
 const galleryPopap = document.querySelector('.gallery__popap');
 const overlay = document.querySelector('.overlay');
@@ -594,14 +596,12 @@ const galleryText = document.querySelector('.gallery__popap-text');
 const galleryPlayer = document.querySelector('.gallery__popap-item__audio');
 let audioGallery = new Audio();
 
-
 galleryImage.src = birdsDataGallery[0].image;
 galleryText.textContent = birdsDataGallery[0].description;
 galleryName.textContent = birdsDataGallery[0].name;
 galleryNameLatin.textContent = birdsDataGallery[0].species;
-const audioSrcGallery = birdsDataGallery[0].audio;
+let audioSrcGallery = birdsDataGallery[0].audio;
 audioPlayer(audioSrcGallery, galleryPlayer, audioGallery, playGallery, timeline[2], volumeSlider[2], volumePer[2], progressBar[2], volumeBut[2]);
-
 
 document.onclick = e => {
   if (e.target.id === 'overlay' || e.target.id === 'close-popap' || e.target.id === 'overlay-index') {
@@ -618,7 +618,7 @@ document.onclick = e => {
             galleryText.textContent = birdsDataGallery[i].description;
             galleryName.textContent = birdsDataGallery[i].name;
             galleryNameLatin.textContent = birdsDataGallery[i].species;
-            const audioSrcGallery = birdsDataGallery[i].audio;
+            audioSrcGallery = birdsDataGallery[i].audio;
             audioPlayer(audioSrcGallery, galleryPlayer, audioGallery, playGallery, timeline[2], volumeSlider[2], volumePer[2], progressBar[2], volumeBut[2]);
           }
         }
