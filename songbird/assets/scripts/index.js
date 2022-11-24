@@ -681,7 +681,6 @@ function playDone() {
   audio.play();
 }
 
-
 const audioPlayerQuestion = document.querySelector(".audio-player");
 let audioPlayerAnswer = document.querySelector(".audio-player__answer");
 let audioQuestion = new Audio();

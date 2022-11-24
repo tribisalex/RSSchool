@@ -30,7 +30,7 @@ body {
   background-color: #55bf94;
   font-size: 22px;
   margin: 0;
-  font-family: "Monotype Corsiva", sans-serif;
+  font-family: "Courier New", serif;
 }
 
 body.active {
@@ -90,7 +90,7 @@ body.active {
   flex-wrap: wrap;
   width: 100%;
   justify-content: space-between;
-  font-size: 28px;
+  font-size: 20px;
   font-weight: bold;
   background-color: #559b16;
   border-radius: 15px;
@@ -122,7 +122,7 @@ body.active {
 }
 
 .select-lang {
-  font-size: 20px;
+  font-size: 18px;
   background: none;
   color: white;
   font-weight: bolder;
@@ -150,7 +150,8 @@ body.active {
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  font-size: 26px;
+  font-size: 28px;
+  font-weight: bold;
   color: #dcf3fb;
 }
 
@@ -223,7 +224,7 @@ body.active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
   background: #dcf3fb;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   z-index: 5000;
@@ -245,6 +246,8 @@ body.active {
   margin-top: 10px;
   width: 100%;
   max-width: 510px;
+  padding: 0;
+  height: 220px;
 }
 
 .play__gallery {
@@ -260,7 +263,9 @@ body.active {
 
 .gallery__popap-text {
   text-align: justify;
-  padding: 0 5px;
+  padding: 0 10px;
+  font-size: 16px;
+  margin: 0;
 }
 
 .gallery__popap-item__image-block {
@@ -285,7 +290,7 @@ body.active {
 }
 
 .result-quiz__name {
-  font-size: 35px;
+  font-size: 26px;
   font-weight: bold;
 }
 
@@ -356,7 +361,25 @@ body.active {
 .audio-player {
   /*border: 2px solid red;*/
   width: 100%;
-  font-size: 24px;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.audio-player__answer {
+  /*border: 2px solid red;*/
+  width: 100%;
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery__popap-item__audio {
+  /*border: 2px solid red;*/
+  width: 100%;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -401,6 +424,20 @@ body.active {
 }
 
 .audio-player .timeline .progress {
+  background: #559b16;
+  width: 0;
+  height: 100%;
+  transition: 0.25s;
+}
+
+.audio-player__answer .timeline .progress {
+  background: #559b16;
+  width: 0;
+  height: 100%;
+  transition: 0.25s;
+}
+
+.gallery__popap-item__audio .timeline .progress {
   background: #559b16;
   width: 0;
   height: 100%;
@@ -667,7 +704,7 @@ body.active {
 
 .answer-block__content-text {
   text-align: justify;
-  font-size: 22px;
+  font-size: 18px;
 }
 
 .next-level {
@@ -727,7 +764,7 @@ body.active {
   align-items: center;
   justify-content: space-around;
   color: #ffffff;
-  font-size: 45px;
+  font-size: 33px;
 }
 
 .footer__container-ul-link {
@@ -774,13 +811,21 @@ body.active {
   }
 
   .nav__ul {
-    font-size: 16px;
+    font-size: 15px;
+  }
+
+  .answer-block__content__image-block {
+    width: 150px;
   }
 
   .answer-block__options-item {
     padding: 5px;
     justify-content: start;
     border: 1px solid #ffffff;
+  }
+
+  .answer-block__content-text {
+    font-size: 14px;
   }
 
   .answer-block__content-intro {
@@ -863,7 +908,7 @@ body.active {
   }
 
   .question__description-name {
-    font-size: 40px;
+    font-size: 35px;
   }
 
   .answer-block__content-description {
@@ -871,7 +916,7 @@ body.active {
   }
 
   .answer-block__content-text {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .nav__ul-item {
@@ -912,7 +957,7 @@ body.active {
   }
 
   .header__score {
-    font-size: 25px;
+    font-size: 22px;
   }
 
   .nav__ul {
