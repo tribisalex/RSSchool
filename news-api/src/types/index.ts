@@ -1,4 +1,4 @@
-export interface sources {
+export interface ISources {
     id: string;
     name: string;
     description: string;
@@ -8,7 +8,7 @@ export interface sources {
     country: string;
 }
 
-export interface news {
+export interface IArticle {
     author: string;
     title: string;
     description: string;
@@ -16,5 +16,10 @@ export interface news {
     urlToImage: string;
     publishedAt: string;
     content: string;
+    source: {
+        id: string;
+        name: string;
+    };
+    [key: string]: string | object;
 }
 
