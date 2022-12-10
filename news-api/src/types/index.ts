@@ -7,7 +7,6 @@ export interface ISources {
     language: string;
     country: string;
 }
-
 export interface IArticle {
     author: string;
     title: string;
@@ -22,4 +21,3 @@ export interface IArticle {
     };
     [key: string]: string | object;
 }
-
