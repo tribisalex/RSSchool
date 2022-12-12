@@ -17,7 +17,8 @@ footer {
     height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+
 }
 footer .copyright {
     font-size: 14px;
@@ -32,4 +33,12 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+
+.footer__logo-git {
+    width: 150px;
+}
+
+.footer__logo-rs {
+    width: 100px;
 }
