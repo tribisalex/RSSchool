@@ -1,3 +1,17 @@
+export type Property = {
+    status?: string;
+    sources: string;
+};
+
+export interface Url {
+    endpoint: string;
+    options?: {
+        sources: string;
+    };
+}
+
+export type getCall<D> = (data: D) => void;
+
 export interface ISources {
     id: string;
     name: string;
@@ -6,6 +20,11 @@ export interface ISources {
     category: string;
     language: string;
     country: string;
+}
+
+export interface DSources {
+    status: string;
+    sources: ISources[];
 }
 
 export interface IArticle {
@@ -20,7 +39,7 @@ export interface IArticle {
         id: string;
         name: string;
     };
-    [key: string]: string | object;
+    [keyId: string]: string | object;
 }
 
 export interface Articles {
@@ -28,22 +47,3 @@ export interface Articles {
     totalResults: number;
     articles: IArticle[];
 }
-
-export interface DSources {
-    status: string;
-    sources: ISources[];
-}
-
-export type Property = {
-    status?: string;
-    sources: string;
-};
-
-export interface Url {
-    endpoint: string;
-    options?: {
-        sources: string;
-    };
-}
-
-export type getCall<D> = (data: D) => void;

@@ -9,45 +9,7 @@ class Loader {
         this.options = options;
     }
 
-    // getResp(
-    //     {endpoint, options = {}},
-    //     callback = () => {
-    //         console.error('No callback for GET response');
-    //     }
-    // ) {
-    //     this.load('GET', endpoint, callback, options);
-    // }
-
-    // errorHandler(res) {
-    //     if (!res.ok) {
-    //         if (res.status === 401 || res.status === 404)
-    //             console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
-    //         throw Error(res.statusText);
-    //     }
-    //
-    //     return res;
-    // }
-    //
-    // makeUrl(options, endpoint) {
-    //     const urlOptions = {...this.options, ...options};
-    //     let url = `${this.baseLink}${endpoint}?`;
-    //
-    //     Object.keys(urlOptions).forEach((key) => {
-    //         url += `${key}=${urlOptions[key]}&`;
-    //     });
-    //
-    //     return url.slice(0, -1);
-    // }
-    //
-    // load(method, endpoint, callback, options = {}) {
-    //     fetch(this.makeUrl(options, endpoint), {method})
-    //         .then(this.errorHandler)
-    //         .then((res) => res.json())
-    //         .then((data) => callback(data))
-    //         .catch((err) => console.error(err));
-    // }
-
-    getResp<T>(endpoint: Url, callback: getCall<T>) {
+    getResp<Ch>(endpoint: Url, callback: getCall<Ch>) {
         this.load('GET', endpoint.endpoint, callback, endpoint.options);
     }
 
@@ -57,7 +19,6 @@ class Loader {
                 console.log(`Sorry, but there is ${res.status} error: ${res.statusText}`);
             throw Error(res.statusText);
         }
-
         return res;
     }
 
@@ -65,14 +26,14 @@ class Loader {
         const urlOptions: { [key: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
-        Object.keys(urlOptions).forEach((key) => {
+        Object.keys(urlOptions).forEach((key: string) => {
             url += `${key}=${urlOptions[key]}&`;
         });
 
         return url.slice(0, -1);
     }
 
-    load<T>(method: 'GET' | 'POST', endpoint: string, callback: getCall<T>, options = {}) {
+    load<Ch>(method: 'GET' | 'POST', endpoint: string, callback: getCall<Ch>, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())

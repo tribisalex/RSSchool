@@ -40,9 +40,9 @@
 
 .source__item:hover,
 .source__item:focus {
-    border-color: #3fcc59;
-    color: #69db7e;
-    box-shadow: 0 0.5em 0.5em -0.4em #3fcc59;
+    border-color: #8e8d8a;
+    color: #8e8d8a;
+    box-shadow: 0 0.5em 0.5em -0.4em #d8c3a5;
     transform: translateY(-0.25em);
 }
 

@@ -3,8 +3,9 @@ import { AppView } from '../view/appView';
 import { Articles, DSources } from '../../types/index';
 
 class App {
-    controller: AppController;
     view: AppView;
+    controller: AppController;
+
     constructor() {
         this.controller = new AppController();
         this.view = new AppView();
