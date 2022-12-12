@@ -1,6 +1,6 @@
 body {
-    color: #fff;
-    background: #17181c;
+    color: #E85A4F;
+    background: #eae7dc;
     font-family: sans-serif;
 }
 
@@ -22,11 +22,11 @@ footer {
 }
 footer .copyright {
     font-size: 14px;
-    color: #333;
+    color:  #8e8d8a;
     text-align: center;
 }
 footer .copyright a {
-    color: #444;
+    color: #d8c3a5;
 }
 footer .copyright a:hover {
     color: #555;
@@ -35,10 +35,20 @@ footer .copyright:before {
     content: '©';
 }
 
-.footer__logo-git {
+.footer__logo-git,
+.footer__logo-rs {
     width: 150px;
 }
 
-.footer__logo-rs {
-    width: 100px;
+@media (max-width: 500px) {
+
+    .header__h1 {
+        font-size: 30px;
+    }
+
+    .footer__logo-git,
+    .footer__logo-rs {
+        width: 70px;
+    }
+
 }
