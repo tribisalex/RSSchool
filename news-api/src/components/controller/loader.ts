@@ -1,4 +1,4 @@
-import { getCallback, UrlResp, Options } from '../../types/index';
+import { getCall, Url, Property } from '../../types/index';
 
 class Loader {
     baseLink: string;
@@ -47,7 +47,7 @@ class Loader {
     //         .catch((err) => console.error(err));
     // }
 
-    getResp<T>(endpoint: UrlResp, callback: getCallback<T>) {
+    getResp<T>(endpoint: Url, callback: getCall<T>) {
         this.load('GET', endpoint.endpoint, callback, endpoint.options);
     }
 
@@ -61,7 +61,7 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: Partial<Options>, endpoint: string) {
+    makeUrl(options: Partial<Property>, endpoint: string) {
         const urlOptions: { [key: string]: string } = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?`;
 
@@ -72,7 +72,7 @@ class Loader {
         return url.slice(0, -1);
     }
 
-    load<T>(method: 'GET' | 'POST', endpoint: string, callback: getCallback<T>, options = {}) {
+    load<T>(method: 'GET' | 'POST', endpoint: string, callback: getCall<T>, options = {}) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res) => res.json())
