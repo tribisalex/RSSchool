@@ -38,7 +38,7 @@ const baseConfig = {
   output: {
     hashFunction: "xxhash64",
     filename: 'index.ts',
-    path: path.resolve(__dirname, '../dist'),
+    path: path.resolve(__dirname, './dist'),
   },
   plugins: [
     new EslingPlugin({
