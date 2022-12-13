@@ -33,6 +33,7 @@ const baseConfig = {
         extensions: ['.ts', '.js'],
     },
     output: {
+        hashFunction: 'xxhash64',
         filename: 'index.js',
         path: path.resolve(__dirname, '../dist'),
     },
