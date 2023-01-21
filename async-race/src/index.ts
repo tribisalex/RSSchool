@@ -1,1 +1,3 @@
-console.log("Как интересно!");
+import { renderPage } from "./renderPage";
+
+renderPage();

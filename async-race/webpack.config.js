@@ -75,6 +75,9 @@ const baseConfig = {
     publicPath: '/',
     historyApiFallback: true,
   },
+  experiments: {
+    topLevelAwait: true
+  },
 };
 
 module.exports = ({ mode }) => {
