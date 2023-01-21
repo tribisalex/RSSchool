@@ -1,11 +1,14 @@
-import { getCars } from "./api";
+import { getCars, getWinners } from "./api";
 
 const { items: cars, count: carsCount } = await getCars(1);
-console.log("cars", cars);
+const { items: winners, count: winnersCount } = await getWinners(1);
 
 export default {
   cars,
-  carsPageCount: 1,
+  carsCurrentPage: 1,
   carsCount,
   view: "garage",
+  winners,
+  winnersCurrentPage: 1,
+  winnersCount,
 };
