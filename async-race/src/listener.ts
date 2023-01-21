@@ -1,4 +1,5 @@
 import store from "./store";
+import { getWinners } from "./api";
 
 const changeView = (to: HTMLButtonElement, view: string) => {
   const garageView = document.querySelector(
@@ -14,10 +15,42 @@ const changeView = (to: HTMLButtonElement, view: string) => {
   });
 };
 
-export const listener = (): void => {
-  const toGarage = document.getElementById("to-garage") as HTMLButtonElement;
+const checkPagination = async (): Promise<void> => {
+  const {
+    winnersItems: winners,
+    winnersCount: winnersCount,
+  } = await getWinners(store.winnersCurrentPage);
+  store.winners = winners;
+  store.winnersCount = winnersCount;
 
-  const toWinners = document.getElementById("to-winners") as HTMLButtonElement;
+  if (store.winnersCurrentPage * 10 < Number(store.winnersCount)) {
+    (<HTMLButtonElement>document.getElementById("next")).disabled = false;
+  } else {
+    (<HTMLButtonElement>document.getElementById("next")).disabled = true;
+  }
+
+  if (store.winnersCurrentPage > 1) {
+    (<HTMLButtonElement>document.getElementById("prev")).disabled = false;
+  } else {
+    (<HTMLButtonElement>document.getElementById("prev")).disabled = true;
+  }
+};
+
+export const listener = (): void => {
+  checkPagination();
+  const toGarage = <HTMLButtonElement>document.getElementById("to-garage");
+  const toWinners = <HTMLButtonElement>document.getElementById("to-winners");
+  const next = <HTMLButtonElement>document.getElementById("next");
+  const prev = <HTMLButtonElement>document.getElementById("prev");
+
+  next.addEventListener("click", () => {
+    console.log(165);
+  });
+
+  prev.addEventListener("click", () => {
+    console.log(165);
+  });
+
   changeView(toGarage, "garage");
   changeView(toWinners, "winners");
 };

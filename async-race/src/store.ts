@@ -1,7 +1,9 @@
 import { getCars, getWinners } from "./api";
 
-const { items: cars, count: carsCount } = await getCars(1);
-const { items: winners, count: winnersCount } = await getWinners(1);
+const { carsItems: cars, carsCount: carsCount } = await getCars(1);
+const { winnersItems: winners, winnersCount: winnersCount } = await getWinners(
+  1
+);
 
 export default {
   cars,

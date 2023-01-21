@@ -128,8 +128,8 @@ const renderWinnersTable = (): string => `
 
 const renderPaginationButton = (): string => `
   <div class="pagination__control">
-    <button class='button-project prev-button'>PREV</button>
-    <button class='button-project next-button'>NEXT</button>
+    <button class='button-project prev-button' id='prev'>PREV</button>
+    <button class='button-project next-button' id='next'>NEXT</button>
   </div>
 `;
 
