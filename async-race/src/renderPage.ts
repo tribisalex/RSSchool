@@ -3,8 +3,8 @@ import { Auto, Winners } from "./types/types";
 
 const renderChangeViewBlock = (): string => `
   <div class='change-view-block d-flex justify-content-center'>
-    <button class='garage__button button-project'>TO GARAGE</button>
-    <button class='winners__button button-project'>TO WINNERS</button>
+    <button class='garage__button button-project' id='to-garage'>TO GARAGE</button>
+    <button class='winners__button button-project' id='to-winners'>TO WINNERS</button>
   </div>
 `;
 
@@ -144,7 +144,7 @@ const renderWinners = (): string => `
   ${renderPaginationButton()}
 `;
 
-export const renderPage = async () => {
+export const renderPage = async (): Promise<void> => {
   const pageLayout = `
   ${renderChangeViewBlock()} 
   <div class='garage-view'>  
