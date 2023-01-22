@@ -133,7 +133,7 @@ const renderPaginationButton = (): string => `
   </div>
 `;
 
-const renderWinners = (): string => `
+export const renderWinners = (): string => `
   <h1 class="h1">Winners (${store.winnersCount})</h1>
     <div class="pagination-winners pagination">
       <span>Page</span>

@@ -1,6 +1,6 @@
 import store from "./store";
 import { createCar, getCars, getWinners } from "./api";
-import { renderGarage } from "./renderPage";
+import { renderGarage, renderWinners } from "./renderPage";
 
 const changeView = (to: HTMLButtonElement, view: string) => {
   const garageView = document.querySelector(
@@ -13,6 +13,7 @@ const changeView = (to: HTMLButtonElement, view: string) => {
     store.view = view;
     winnersView.style.display = store.view === "garage" ? "none" : "block";
     garageView.style.display = store.view === "winners" ? "none" : "block";
+    checkPagination();
   });
 };
 
@@ -47,41 +48,85 @@ export const checkPagination = async (): Promise<void> => {
   }
 };
 
+const nextButtonClick = async () => {
+  const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
+  const winnersView: HTMLElement = <HTMLElement>(
+    document.querySelector(".winners-view")
+  );
+  if (store.view === "garage") {
+    if (store.carsCurrentPage * 7 < Number(store.carsCount)) {
+      store.carsCurrentPage += 1;
+      await checkPagination();
+      garage.innerHTML = renderGarage();
+    }
+  } else {
+    if (store.winnersCurrentPage * 10 < Number(store.winnersCount)) {
+      store.winnersCurrentPage += 1;
+      await checkPagination();
+      winnersView.innerHTML = renderWinners();
+    }
+  }
+};
+
+const prevButtonClick = async () => {
+  const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
+  const winnersView: HTMLElement = <HTMLElement>(
+    document.querySelector(".winners-view")
+  );
+  if (store.view === "garage") {
+    if (store.carsCurrentPage != 1) {
+      store.carsCurrentPage -= 1;
+      await checkPagination();
+      garage.innerHTML = renderGarage();
+    }
+  } else {
+    if (store.winnersCurrentPage > 1) {
+      store.winnersCurrentPage -= 1;
+      await checkPagination();
+      winnersView.innerHTML = renderWinners();
+    }
+  }
+};
+
+const createAutoClick = async () => {
+  const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
+  const createColor = <HTMLButtonElement>(
+    document.getElementById("create-color")
+  );
+  const createName = <HTMLButtonElement>document.getElementById("create-name");
+  const auto: { name: string; color: string } = {
+    name: createName.value,
+    color: createColor.value,
+  };
+  if (createName.value !== "") {
+    await createCar(auto);
+    await checkPagination();
+    createName.value = "";
+    garage.innerHTML = renderGarage();
+  }
+};
+
 export const listener = (): void => {
   const toGarage = <HTMLButtonElement>document.getElementById("to-garage");
   const toWinners = <HTMLButtonElement>document.getElementById("to-winners");
   const next = <HTMLButtonElement>document.getElementById("next");
   const prev = <HTMLButtonElement>document.getElementById("prev");
   const createAuto = <HTMLButtonElement>document.getElementById("create-auto");
-  const createColor = <HTMLButtonElement>(
-    document.getElementById("create-color")
-  );
-  const createName = <HTMLButtonElement>document.getElementById("create-name");
+  const removeAuto = <HTMLButtonElement>document.getElementById("remove-auto");
 
   createAuto.addEventListener("submit", async (e: Event) => {
     e.preventDefault();
-    const target: HTMLFormElement = <HTMLFormElement>e.target;
-    console.log("target", target);
-    const auto: { name: string; color: string } = {
-      name: createName.value,
-      color: createColor.value,
-    };
-
-    const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
-    if (createName.value !== "") {
-      await createCar(auto);
-      await checkPagination();
-      createName.value = "";
-      garage.innerHTML = renderGarage();
-    }
+    await createAutoClick();
   });
 
-  next.addEventListener("click", () => {
-    console.log(165);
+  // removeAuto.addEventListener('click', () => {})
+
+  next.addEventListener("click", async () => {
+    await nextButtonClick();
   });
 
-  prev.addEventListener("click", () => {
-    console.log(165);
+  prev.addEventListener("click", async () => {
+    await prevButtonClick();
   });
 
   changeView(toGarage, "garage");
