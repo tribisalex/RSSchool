@@ -1,5 +1,3 @@
-import { Auto } from "./types/types";
-
 const url = "http://localhost:3000";
 
 const garage = `${url}/garage`;
@@ -18,7 +16,7 @@ export const getCars = async (page: number, limit = 7) => {
 export const getCar = async (id: number) =>
   (await fetch(`${garage}/${id}`)).json();
 
-export const createCar = async (body: Auto) =>
+export const createCar = async (body: { name: string; color: string }) =>
   (
     await fetch(garage, {
       method: "POST",

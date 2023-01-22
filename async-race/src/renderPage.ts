@@ -51,7 +51,7 @@ const renderCar = (auto: Auto): string => `
   </div>
 `;
 
-const renderGarage = (): string => `
+export const renderGarage = (): string => `
   <h1 class="h1">Garage (${store.carsCount})</h1>
     <div class="pagination-garage pagination">
       <span>Page</span>
