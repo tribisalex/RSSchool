@@ -1,5 +1,5 @@
 import store from "./store";
-import { createCar, getCars, getWinners } from "./api";
+import { createCar, deleteCar, getCars, getWinners } from "./api";
 import { renderGarage, renderWinners } from "./renderPage";
 
 const changeView = (to: HTMLButtonElement, view: string) => {
@@ -106,20 +106,45 @@ const createAutoClick = async () => {
   }
 };
 
+const deleteAutoClick = async (e: Event) => {
+  if ((<HTMLButtonElement>e.target).classList.contains("delete__auto")) {
+    const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
+    const id = Number((<HTMLButtonElement>e.target).id.split("-")[1]);
+    await deleteCar(id);
+    await checkPagination();
+    garage.innerHTML = renderGarage();
+  }
+};
+
 export const listener = (): void => {
-  const toGarage = <HTMLButtonElement>document.getElementById("to-garage");
-  const toWinners = <HTMLButtonElement>document.getElementById("to-winners");
-  const next = <HTMLButtonElement>document.getElementById("next");
-  const prev = <HTMLButtonElement>document.getElementById("prev");
-  const createAuto = <HTMLButtonElement>document.getElementById("create-auto");
-  const removeAuto = <HTMLButtonElement>document.getElementById("remove-auto");
+  const toGarage: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("to-garage")
+  );
+  const toWinners: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("to-winners")
+  );
+  const next: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("next")
+  );
+  const prev: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("prev")
+  );
+  const createAuto: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("create-auto")
+  );
+  const removeAuto: NodeListOf<Element> = <NodeListOf<Element>>(
+    document.querySelectorAll(".delete__auto")
+  );
+  console.log(removeAuto);
 
   createAuto.addEventListener("submit", async (e: Event) => {
     e.preventDefault();
     await createAutoClick();
   });
 
-  // removeAuto.addEventListener('click', () => {})
+  document.body.addEventListener("click", async (e: Event) => {
+    await deleteAutoClick(e);
+  });
 
   next.addEventListener("click", async () => {
     await nextButtonClick();

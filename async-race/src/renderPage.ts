@@ -31,10 +31,10 @@ const renderFlag = (autoId: number): string => `
 
 const renderCar = (auto: Auto): string => `
   <div class='auto-item__controls'>
-    <button class='select__auto button-project' id='select-auto-${
+    <button class='select__auto button-project' id='select-${
       auto.id
     }'>SELECT</button>
-    <button class='delete__auto button-project' id='remove-auto-${
+    <button class='delete__auto button-project' id='remove-${
       auto.id
     }'>REMOVE</button>
     <span class='name__auto'>${auto.name}</span>
