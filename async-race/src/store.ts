@@ -9,6 +9,7 @@ export default {
   cars,
   carsCurrentPage: 1,
   carsCount,
+  currentCarId: 0,
   view: "garage",
   winners,
   winnersCurrentPage: 1,

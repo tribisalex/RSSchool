@@ -1,6 +1,7 @@
 import store from "./store";
-import { createCar, deleteCar, getCars, getWinners } from "./api";
+import { createCar, deleteCar, getCars, getWinners, updateCar } from "./api";
 import { renderGarage, renderWinners } from "./renderPage";
+import { Auto } from "./types/types";
 
 const changeView = (to: HTMLButtonElement, view: string) => {
   const garageView = document.querySelector(
@@ -90,10 +91,12 @@ const prevButtonClick = async () => {
 
 const createAutoClick = async () => {
   const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
-  const createColor = <HTMLButtonElement>(
+  const createColor: HTMLInputElement = <HTMLInputElement>(
     document.getElementById("create-color")
   );
-  const createName = <HTMLButtonElement>document.getElementById("create-name");
+  const createName: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("create-name")
+  );
   const auto: { name: string; color: string } = {
     name: createName.value,
     color: createColor.value,
@@ -106,6 +109,25 @@ const createAutoClick = async () => {
   }
 };
 
+const updateAutoClick = async () => {
+  console.log("update");
+  const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
+  const updateColor: HTMLInputElement = <HTMLInputElement>(
+    document.getElementById("update-color")
+  );
+  const updateName = <HTMLButtonElement>document.getElementById("update-name");
+  const auto: { name: string; color: string } = {
+    name: updateName.value,
+    color: updateColor.value,
+  };
+  if (updateName.value !== "") {
+    await updateCar(auto, store.currentCarId);
+    await checkPagination();
+    updateName.value = "";
+    garage.innerHTML = renderGarage();
+  }
+};
+
 const deleteAutoClick = async (e: Event) => {
   if ((<HTMLButtonElement>e.target).classList.contains("delete__auto")) {
     const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
@@ -113,6 +135,26 @@ const deleteAutoClick = async (e: Event) => {
     await deleteCar(id);
     await checkPagination();
     garage.innerHTML = renderGarage();
+  }
+};
+
+const updateInputClick = async (e: Event) => {
+  const updateNameInput: HTMLInputElement = <HTMLInputElement>(
+    document.querySelector(".name__auto__update")
+  );
+  const updateColorInput: HTMLInputElement = <HTMLInputElement>(
+    document.querySelector(".color__auto__update")
+  );
+
+  if ((<HTMLButtonElement>e.target).classList.contains("select__auto")) {
+    const id = Number((<HTMLButtonElement>e.target).id.split("-")[1]);
+    store.currentCarId = id;
+    store.cars.forEach((car: Auto) => {
+      if (car.id === id) {
+        updateNameInput.value = car.name;
+        updateColorInput.value = car.color;
+      }
+    });
   }
 };
 
@@ -132,6 +174,9 @@ export const listener = (): void => {
   const createAuto: HTMLButtonElement = <HTMLButtonElement>(
     document.getElementById("create-auto")
   );
+  const updateAuto: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("update-auto")
+  );
   const removeAuto: NodeListOf<Element> = <NodeListOf<Element>>(
     document.querySelectorAll(".delete__auto")
   );
@@ -142,8 +187,14 @@ export const listener = (): void => {
     await createAutoClick();
   });
 
+  updateAuto.addEventListener("submit", async (e: Event) => {
+    e.preventDefault();
+    await updateAutoClick();
+  });
+
   document.body.addEventListener("click", async (e: Event) => {
     await deleteAutoClick(e);
+    await updateInputClick(e);
   });
 
   next.addEventListener("click", async () => {

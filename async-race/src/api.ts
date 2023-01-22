@@ -26,6 +26,20 @@ export const createCar = async (body: { name: string; color: string }) =>
     })
   ).json();
 
+export const updateCar = async (
+  body: { name: string; color: string },
+  id: number
+) =>
+  (
+    await fetch(`${garage}/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+  ).json();
+
 export const deleteCar = async (id: number) =>
   (await fetch(`${garage}/${id}`, { method: "DELETE" })).json();
 
