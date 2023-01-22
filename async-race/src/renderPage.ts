@@ -71,9 +71,9 @@ const renderGarage = (): string => `
 const renderCreateUpdateForm = (): string => `
   <div>
     <form class='create-auto change-auto' id='create-auto'>
-      <input class="name__auto__create input" type='text' value='' placeholder='Enter auto'>
-      <input class="color__auto__create" type='color'>
-      <button class='button-project'>Create auto</button>
+      <input class="name__auto__create input" id="create-name" name='name' type='text' value='' placeholder='Enter auto'>
+      <input class="color__auto__create"  id="create-color" name='color' type='color'>
+      <button class='button-project' type="submit" >Create auto</button>
     </form>
     <form class='update-auto change-auto' id='update-auto' >
       <input class="name__auto__update input" type='text' value='' placeholder='Enter auto'>

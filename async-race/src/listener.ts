@@ -1,5 +1,6 @@
 import store from "./store";
-import { getWinners } from "./api";
+import { createCar, getWinners } from "./api";
+import { Auto } from "./types/types";
 
 const changeView = (to: HTMLButtonElement, view: string) => {
   const garageView = document.querySelector(
@@ -42,6 +43,21 @@ export const listener = (): void => {
   const toWinners = <HTMLButtonElement>document.getElementById("to-winners");
   const next = <HTMLButtonElement>document.getElementById("next");
   const prev = <HTMLButtonElement>document.getElementById("prev");
+  const createAuto = <HTMLButtonElement>document.getElementById("create-auto");
+
+  createAuto.addEventListener("submit", async (e: Event) => {
+    e.preventDefault();
+    const target = e.target;
+    console.log("target", target);
+    const auto: Auto = Object.fromEntries(
+      new Map(
+        [...target]
+          .filter(({ name }) => !!name)
+          .map(({ value, name }) => [name, value])
+      )
+    );
+    await createCar(auto);
+  });
 
   next.addEventListener("click", () => {
     console.log(165);

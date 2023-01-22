@@ -3,7 +3,9 @@
     "esModuleInterop": true,
     "lib": [
       "es2020",
-      "dom"
+      "dom",
+      "es2022",
+      "dom.iterable"
     ],
     "module": "es2022",
     "preserveConstEnums": true,
