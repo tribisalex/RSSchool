@@ -66,11 +66,13 @@ export const listener = (): void => {
       name: createName.value,
       color: createColor.value,
     };
+
+    const garage: HTMLElement = <HTMLElement>document.querySelector(".garage");
     if (createName.value !== "") {
       await createCar(auto);
       await checkPagination();
       createName.value = "";
-      renderGarage();
+      garage.innerHTML = renderGarage();
     }
   });
 

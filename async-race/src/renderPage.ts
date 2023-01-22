@@ -150,7 +150,9 @@ export const renderPage = async (): Promise<void> => {
   <div class='garage-view'>  
   ${renderCreateUpdateForm()}
   ${renderStartRace()}
+  <div class="garage">
   ${renderGarage()}
+  </div>
   </div>
  
   <div class="winners-view">
