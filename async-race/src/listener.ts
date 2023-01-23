@@ -25,6 +25,12 @@ export const listener = (): void => {
   const createAuto: HTMLButtonElement = <HTMLButtonElement>(
     document.getElementById("create-auto")
   );
+  const createButton: HTMLButtonElement = <HTMLButtonElement>(
+    document.querySelector(".create-button")
+  );
+  const createNameAuto: HTMLInputElement = <HTMLInputElement>(
+    document.getElementById("create-name")
+  );
   const updateAuto: HTMLButtonElement = <HTMLButtonElement>(
     document.getElementById("update-auto")
   );
@@ -35,12 +41,13 @@ export const listener = (): void => {
     e.preventDefault();
     await createAutoClick();
   });
-
+  createNameAuto.addEventListener("input", () => {
+    createButton.removeAttribute("disabled");
+  });
   updateAuto.addEventListener("submit", async (e: Event) => {
     e.preventDefault();
     await updateAutoClick();
   });
-
   document.body.addEventListener("click", async (e: Event) => {
     await deleteAutoClick(e);
     await updateInputClick(e);
@@ -60,7 +67,6 @@ export const listener = (): void => {
   generateCars.addEventListener("click", async () => {
     generateCars.setAttribute("disabled", "true");
     await generateCarsClick();
-    console.log("вышло");
     generateCars.removeAttribute("disabled");
   });
 };

@@ -73,12 +73,12 @@ const renderCreateUpdateForm = (): string => `
     <form class='create-auto change-auto' id='create-auto'>
       <input class="name__auto__create input" id="create-name" name='name' type='text' value='' placeholder='Enter auto'>
       <input class="color__auto__create"  id="create-color" name='color' type='color'>
-      <button class='button-project' type="submit" >Create auto</button>
+      <button class='create-button button-project' type="submit" disabled>Create auto</button>
     </form>
     <form class='update-auto change-auto' id='update-auto' >
       <input class="name__auto__update input" id='update-name' type='text' value='' placeholder='Enter auto'>
       <input class="color__auto__update" id='update-color' type='color' value='#12af55'>
-      <button class='button-project'>Update auto</button>
+      <button class='update-button button-project' disabled>Update auto</button>
     </form>
   </div>
 `;

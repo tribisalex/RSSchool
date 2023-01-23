@@ -95,10 +95,14 @@ export const createAutoClick = async () => {
   const createName: HTMLButtonElement = <HTMLButtonElement>(
     document.getElementById("create-name")
   );
+  const createButton: HTMLButtonElement = <HTMLButtonElement>(
+    document.querySelector(".create-button")
+  );
   const auto: { name: string; color: string } = {
     name: createName.value,
     color: createColor.value,
   };
+  createButton.setAttribute("disabled", "true");
   if (createName.value !== "") {
     await createCar(auto);
     await checkPagination();
@@ -106,15 +110,19 @@ export const createAutoClick = async () => {
   }
 };
 
-export const updateAutoClick = async () => {
+export const updateAutoClick = async (): Promise<void> => {
   const updateColor: HTMLInputElement = <HTMLInputElement>(
     document.getElementById("update-color")
   );
   const updateName = <HTMLButtonElement>document.getElementById("update-name");
+  const updateButton: HTMLButtonElement = <HTMLButtonElement>(
+    document.querySelector(".update-button")
+  );
   const auto: { name: string; color: string } = {
     name: updateName.value,
     color: updateColor.value,
   };
+  updateButton.setAttribute("disabled", "true");
   if (updateName.value !== "") {
     await updateCar(auto, store.currentCarId);
     await checkPagination();
@@ -125,6 +133,10 @@ export const updateAutoClick = async () => {
 export const deleteAutoClick = async (e: Event) => {
   if ((<HTMLButtonElement>e.target).classList.contains("delete__auto")) {
     const id = Number((<HTMLButtonElement>e.target).id.split("-")[1]);
+    const deleteAutoButton: HTMLButtonElement = <HTMLButtonElement>(
+      document.getElementById(`remove-${id}`)
+    );
+    deleteAutoButton.setAttribute("disabled", "true");
     await deleteCar(id);
     store.winners.forEach((item) => {
       if (item.id === id) {
@@ -142,8 +154,11 @@ export const updateInputClick = async (e: Event) => {
   const updateColorInput: HTMLInputElement = <HTMLInputElement>(
     document.querySelector(".color__auto__update")
   );
-
+  const updateButton: HTMLButtonElement = <HTMLButtonElement>(
+    document.querySelector(".update-button")
+  );
   if ((<HTMLButtonElement>e.target).classList.contains("select__auto")) {
+    updateButton.removeAttribute("disabled");
     const id = Number((<HTMLButtonElement>e.target).id.split("-")[1]);
     store.currentCarId = id;
     store.cars.forEach((car: Auto) => {
