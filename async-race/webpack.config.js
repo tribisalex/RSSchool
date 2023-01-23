@@ -4,16 +4,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const EslingPlugin = require('eslint-webpack-plugin');
 
-//const htmlPageNames = ['main-page/main.html', 'page-404/404.html', 'cart-page/cart.html', 'product-page/product.html'];
-//
-// const multipleHtmlPlugins = htmlPageNames.map(
-//   (name) =>
-//     new HtmlWebpackPlugin({
-//       template: `./src/components/view/${name}`,
-//       filename: name.split('/')[1],
-//     })
-// );
-
 const baseConfig = {
   entry: path.resolve(__dirname, './src/index.ts'),
   mode: 'development',
@@ -57,7 +47,7 @@ const baseConfig = {
   },
   output: {
     filename: 'index.js',
-    path: path.resolve(__dirname, './dist'),
+    path: path.resolve(__dirname, './dist/async-race'),
   },
   plugins: [
     new HtmlWebpackPlugin({
