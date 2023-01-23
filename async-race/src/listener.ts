@@ -58,9 +58,9 @@ export const listener = (): void => {
   changeView(toWinners, "winners");
 
   generateCars.addEventListener("click", async () => {
-    // generateCars.setAttribute("disabled", "true");
-    await generateCarsClick().then(() => {
-      // generateCars.setAttribute("disabled", "false");
-    });
+    generateCars.setAttribute("disabled", "true");
+    await generateCarsClick();
+    console.log("вышло");
+    generateCars.removeAttribute("disabled");
   });
 };

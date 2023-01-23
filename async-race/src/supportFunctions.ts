@@ -199,6 +199,9 @@ const renderColorAuto = (): string => {
 };
 
 export const generateCarsClick = async () => {
+  const generateCars: HTMLButtonElement = <HTMLButtonElement>(
+    document.querySelector(".generate-cars-button")
+  );
   for (let i = 0; i < 100; i++) {
     const name = renderNameAuto();
     const color = renderColorAuto();
@@ -206,8 +209,8 @@ export const generateCarsClick = async () => {
       name: name,
       color: color,
     };
-    await createCar(auto).then(() => {
-      checkPagination();
-    });
+    await createCar(auto);
   }
+  generateCars.setAttribute("disabled", "true");
+  await checkPagination();
 };
