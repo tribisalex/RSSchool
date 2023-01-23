@@ -85,9 +85,9 @@ const renderCreateUpdateForm = (): string => `
 
 const renderStartRace = (): string => `
     <div class="start-race change-auto">
-      <button class='button-project'>RACE</button>
-      <button class='button-project'>RESET</button>
-      <button class='button-project'>GENERATE CARS</button>
+      <button class='race-button button-project'>RACE</button>
+      <button class='reset-race-button button-project'>RESET</button>
+      <button class='generate-cars-button button-project'>GENERATE CARS</button>
     </div>
 `;
 
@@ -141,7 +141,6 @@ export const renderWinners = (): string => `
     </div>
   ${renderWinnersTable()}
   </div>
-  ${renderPaginationButton()}
 `;
 
 export const renderPage = async (): Promise<void> => {
@@ -157,6 +156,7 @@ export const renderPage = async (): Promise<void> => {
  
   <div class="winners-view">
   ${renderWinners()}
+  ${renderPaginationButton()}
     `;
   const main: HTMLElement = document.createElement("div");
   main.innerHTML = pageLayout;

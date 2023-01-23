@@ -1,5 +1,6 @@
 import { renderPage } from "./renderPage";
-import { checkPagination, listener } from "./listener";
+import { listener } from "./listener";
+import { checkPagination } from "./supportFunctions";
 
 await renderPage();
 listener();

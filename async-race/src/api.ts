@@ -57,3 +57,6 @@ export const getWinners = async (page: number, limit = 10) => {
     winnersCount: response.headers.get("X-Total-Count"),
   };
 };
+
+export const deleteWinner = async (id: number) =>
+  (await fetch(`${winners}/${id}`, { method: "DELETE" })).json();
