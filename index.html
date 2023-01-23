@@ -1,0 +1,157 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Async race</title><style>body {
+      background-color: azure;
+    }
+    
+    .main {
+      width: 95vw;
+      margin: 0 auto;
+    }
+    
+    .change-view-block {
+      margin: 0 auto 30px auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 200px;
+    }
+    
+    .change-auto {
+      margin-bottom: 8px;
+      width: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    .input {
+      width: 110px;
+    }
+    
+    .button-project {
+      border: 2px solid grey;
+      color: white;
+      text-transform: uppercase;
+      padding: 4px;
+      border-radius: 3px;
+      background: rgb(64,199,129);
+      box-shadow: 0 -2px rgb(53,167,110) inset;
+      transition: 0.2s;
+    }
+    
+    .h1 {
+      text-align: center;
+      margin-bottom: 0;
+    }
+    
+    .pagination {
+      font-size: 20px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 70px;
+      margin: 0 auto 20px auto;
+    }
+    
+    .button-project:hover { background: rgb(53, 167, 110); }
+    
+    .button-project:active {
+      background: rgb(33,147,90);
+      box-shadow: 0 3px rgb(33,147,90) inset;
+    }
+    
+    .button-project:disabled {
+      background: rosybrown;
+      box-shadow: none;
+    }
+    
+    .auto__block {
+      margin-bottom: 30px;
+      list-style: none;
+      padding: 0;
+    }
+    
+    .auto__block-item {
+      margin-bottom: 25px;
+    }
+    
+    .name__auto {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    
+    .auto-item__race {
+      padding: 0;
+      margin: 0;
+      border-bottom: 3px black dashed ;
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+    }
+    
+    .auto-item__race-block {
+      padding: 0;
+      margin: 0;
+      display: flex;
+    }
+    
+    .button-engine {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+      border: 2px solid black;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 5px;
+    }
+    
+    .button-engine:disabled {
+    
+    }
+    
+    .auto__ico {
+      position: absolute;
+      left: 80px;
+      bottom: -29px;
+      width: 100px;
+    }
+    
+    .flag__ico {
+      margin-right: 100px;
+    }
+    
+    .auto-item__controls {
+      margin-bottom: 10px;
+    }
+    
+    .auto-item__race {
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center;
+    }
+    
+    .winners-view {
+      display: none;
+    }
+    
+    .winners__table {
+      width: 400px;
+      text-align: center;
+      margin: 0 auto 30px auto;
+      font-size: 18px;
+    }
+    
+    .winners__table td {
+      padding: 0 10px;
+    }
+    
+    .pagination__control {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      width: 100px;
+    }</style><script defer="defer" src="index.js"></script></head><body></body></html>
