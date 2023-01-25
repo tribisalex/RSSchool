@@ -41,8 +41,12 @@ const renderCar = (auto: Auto): string => `
   </div>
   <div class='auto-item__race'>
     <div class='auto-item__race-block'>
-      <div class='started-engine__button button-engine'>A</div>
-      <div class='stop-engine__button button-engine'>B</div>
+      <div class='started-engine__button button-engine' id="start-${
+        auto.id
+      }">A</div>
+      <div class='stop-engine__button button-engine' id="stop-${
+        auto.id
+      }">B</div>
     </div>
     <div class='auto__ico' id='auto-${auto.id}'>
       ${renderCarIco(auto.color)}
@@ -118,8 +122,8 @@ const renderWinnersTable = (): string => `
         <th>Number</th>
         <th>Car</th>
         <th>Name</th>
-        <th>Wins</th>
-        <th>Best time (seconds)</th>
+        <th class="wins" id="wins">Wins ${store.arrowWins}</th>
+        <th class="time" id="time">Best time (seconds) ${store.arrowTime}</th>
       </tr>
       </thead>
       ${renderTBodyWinners()}

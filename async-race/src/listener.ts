@@ -5,6 +5,8 @@ import {
   generateCarsClick,
   nextButtonClick,
   prevButtonClick,
+  sortOrder,
+  startStopAutoEngine,
   updateAutoClick,
   updateInputClick,
 } from "./supportFunctions";
@@ -51,6 +53,8 @@ export const listener = (): void => {
   document.body.addEventListener("click", async (e: Event) => {
     await deleteAutoClick(e);
     await updateInputClick(e);
+    await startStopAutoEngine(e);
+    await sortOrder(e);
   });
 
   next.addEventListener("click", async () => {

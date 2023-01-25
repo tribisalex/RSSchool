@@ -33,7 +33,12 @@ export const checkPagination = async (): Promise<void> => {
   const {
     winnersItems: winners,
     winnersCount: winnersCount,
-  } = await getWinners(store.winnersCurrentPage);
+  } = await getWinners(
+    store.winnersCurrentPage,
+    10,
+    store.sortBy,
+    store.orderBy
+  );
   const { carsItems: cars, carsCount: carsCount } = await getCars(
     store.carsCurrentPage
   );
@@ -169,6 +174,26 @@ export const updateInputClick = async (e: Event) => {
     });
   }
 };
+
+export const startStopAutoEngine = async (e: Event) => {
+  if ((<HTMLButtonElement>e.target).classList.contains("button-engine")) {
+    const id = Number((<HTMLButtonElement>e.target).id.split("-")[1]);
+    const status: string = (<HTMLButtonElement>e.target).id.split("-")[0];
+    store.currentStartCarId = id;
+    store.cars.forEach((car: Auto) => {
+      if (car.id === id) {
+        if (status === "start") {
+          // changeEngineStatus(id, "started");
+          console.log("start");
+        } else {
+          // changeEngineStatus(id, "stopped");
+          console.log("stop");
+        }
+      }
+    });
+  }
+};
+
 const letters = "0123456789ABCDEF";
 const carsNameArray = [
   [
@@ -228,4 +253,29 @@ export const generateCarsClick = async () => {
   }
   generateCars.setAttribute("disabled", "true");
   await checkPagination();
+};
+
+export const sortOrder = async (e: Event) => {
+  if ((<HTMLButtonElement>e.target).classList.contains("wins")) {
+    store.sortBy = "wins";
+    if (store.orderBy === "" || store.orderBy === "asc") {
+      store.orderBy = "desc";
+      store.arrowWins = "&uarr;";
+    } else {
+      store.orderBy = "asc";
+      store.arrowWins = "&darr;";
+    }
+    await checkPagination();
+  }
+  if ((<HTMLButtonElement>e.target).classList.contains("time")) {
+    store.sortBy = "time";
+    if (store.orderBy === "" || store.orderBy === "asc") {
+      store.orderBy = "desc";
+      store.arrowTime = "&uarr;";
+    } else {
+      store.orderBy = "asc";
+      store.arrowTime = "&darr;";
+    }
+    await checkPagination();
+  }
 };
