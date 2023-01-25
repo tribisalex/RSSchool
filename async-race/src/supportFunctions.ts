@@ -136,6 +136,13 @@ export const updateAutoClick = async (): Promise<void> => {
 };
 
 export const deleteAutoClick = async (e: Event) => {
+  const updateColor: HTMLInputElement = <HTMLInputElement>(
+    document.getElementById("update-color")
+  );
+  const updateName = <HTMLButtonElement>document.getElementById("update-name");
+  const updateButton: HTMLButtonElement = <HTMLButtonElement>(
+    document.querySelector(".update-button")
+  );
   if ((<HTMLButtonElement>e.target).classList.contains("delete__auto")) {
     const id = Number((<HTMLButtonElement>e.target).id.split("-")[1]);
     const deleteAutoButton: HTMLButtonElement = <HTMLButtonElement>(
@@ -148,6 +155,9 @@ export const deleteAutoClick = async (e: Event) => {
         deleteWinner(id);
       }
     });
+    updateButton.setAttribute("disabled", "true");
+    updateColor.value = "#ffffff";
+    updateName.value = "";
     await checkPagination();
   }
 };
