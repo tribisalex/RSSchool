@@ -5,6 +5,7 @@ import {
   generateCarsClick,
   nextButtonClick,
   prevButtonClick,
+  raceAuto,
   sortOrder,
   startStopAutoEngine,
   updateAutoClick,
@@ -55,6 +56,7 @@ export const listener = (): void => {
     await updateInputClick(e);
     await startStopAutoEngine(e);
     await sortOrder(e);
+    await raceAuto(e);
   });
 
   next.addEventListener("click", async () => {

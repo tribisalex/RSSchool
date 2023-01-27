@@ -71,6 +71,35 @@ export const getWinners = async (
   };
 };
 
+export const createWinner = async (body: {
+  id: number;
+  wins: number;
+  time: number;
+}) =>
+  (
+    await fetch(winners, {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+  ).json();
+
+export const updateWinner = async (
+  body: { wins: number; time: number },
+  id: number
+) =>
+  (
+    await fetch(`${winners}/${id}`, {
+      method: "PUT",
+      body: JSON.stringify(body),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+  ).json();
+
 export const deleteWinner = async (id: number) =>
   (await fetch(`${winners}/${id}`, { method: "DELETE" })).json();
 

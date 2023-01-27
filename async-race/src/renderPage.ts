@@ -55,7 +55,15 @@ const renderCar = (auto: Auto): string => `
   </div>
 `;
 
+export const renderModal = (): string => `
+    <div class="modal" style="opacity: ${store.opacity}">
+      <div>Wins car ${store.nameWinnerCar}</div>
+      <div>Time is ${store.timeWinnerCar}</div>
+    </div>
+`;
+
 export const renderGarage = (): string => `
+  ${renderModal()}
   <h1 class="h1">Garage (${store.carsCount})</h1>
     <div class="pagination-garage pagination">
       <span>Page</span>
@@ -89,8 +97,8 @@ const renderCreateUpdateForm = (): string => `
 
 const renderStartRace = (): string => `
     <div class="start-race change-auto">
-      <button class='race-button button-project'>RACE</button>
-      <button class='reset-race-button button-project'>RESET</button>
+      <button class='race-button button-project race' id="race">RACE</button>
+      <button class='reset-race-button button-project reset' id="reset">RESET</button>
       <button class='generate-cars-button button-project'>GENERATE CARS</button>
     </div>
 `;

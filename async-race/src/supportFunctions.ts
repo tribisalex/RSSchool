@@ -1,13 +1,15 @@
 import store from "./store";
 import {
   createCar,
+  createWinner,
   deleteCar,
   deleteWinner,
   getCars,
   getWinners,
   updateCar,
+  updateWinner,
 } from "./api";
-import { renderGarage, renderWinners } from "./renderPage";
+import { renderGarage, renderModal, renderWinners } from "./renderPage";
 import { Auto } from "./types/types";
 
 export const changeView = (to: HTMLButtonElement, view: string) => {
@@ -285,6 +287,46 @@ export const sortOrder = async (e: Event) => {
     } else {
       store.orderBy = "asc";
       store.arrowTime = "&darr;";
+    }
+    await checkPagination();
+  }
+};
+
+const modalCheck = (name: string, time: string): void => {
+  setTimeout(() => {
+    store.opacity = "0";
+    checkPagination();
+  }, 2000);
+  store.opacity = "1";
+  store.nameWinnerCar = name;
+  store.timeWinnerCar = time;
+};
+
+export const raceAuto = async (e: Event) => {
+  if ((<HTMLButtonElement>e.target).classList.contains("race")) {
+    const arr: number[] = [];
+    store.winners.forEach((winner) => {
+      arr.push(winner.id);
+    });
+    const autoCreate: { id: number; wins: number; time: number } = {
+      id: store.cars[0].id,
+      wins: 1,
+      time: 0.1,
+    };
+    if (arr.includes(autoCreate.id)) {
+      const autoUpdate: { wins: number; time: number } = {
+        wins: store.winners[arr.indexOf(autoCreate.id)].wins + 1,
+        time: 0.1,
+      };
+      modalCheck(store.cars[0].name, autoCreate.time.toString());
+      renderModal();
+      await updateWinner(autoUpdate, autoCreate.id);
+      // await checkPagination();
+    } else {
+      modalCheck(store.cars[0].name, autoCreate.time.toString());
+      renderModal();
+      await createWinner(autoCreate);
+      await checkPagination();
     }
     await checkPagination();
   }

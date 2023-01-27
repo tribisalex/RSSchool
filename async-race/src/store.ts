@@ -22,4 +22,7 @@ export default {
   orderBy: "asc",
   arrowWins: "&darr;",
   arrowTime: "&darr;",
+  opacity: "0",
+  nameWinnerCar: "",
+  timeWinnerCar: "",
 };
