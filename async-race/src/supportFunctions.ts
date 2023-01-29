@@ -12,19 +12,22 @@ import {
 import { renderGarage, renderModal, renderWinners } from "./renderPage";
 import { Auto } from "./types/types";
 
-export const changeView = (to: HTMLButtonElement, view: string) => {
-  const garageView = document.querySelector(
-    ".garage-view"
-  ) as HTMLButtonElement;
-  const winnersView = document.querySelector(
-    ".winners-view"
-  ) as HTMLButtonElement;
-  to.addEventListener("click", async () => {
-    store.view = view;
-    winnersView.style.display = store.view === "garage" ? "none" : "block";
-    garageView.style.display = store.view === "winners" ? "none" : "block";
-    await checkPagination();
-  });
+export const changeView = (to: HTMLButtonElement, view: string): void => {
+  const garageView: HTMLButtonElement = <HTMLButtonElement>(
+    document.querySelector(".garage-view")
+  );
+  const winnersView: HTMLButtonElement = <HTMLButtonElement>(
+    document.querySelector(".winners-view")
+  );
+  to.addEventListener(
+    "click",
+    async (): Promise<void> => {
+      store.view = view;
+      winnersView.style.display = store.view === "garage" ? "none" : "block";
+      garageView.style.display = store.view === "winners" ? "none" : "block";
+      await checkPagination();
+    }
+  );
 };
 
 export const checkPagination = async (): Promise<void> => {
@@ -67,7 +70,7 @@ export const checkPagination = async (): Promise<void> => {
   winnersView.innerHTML = renderWinners();
 };
 
-export const nextButtonClick = async () => {
+export const nextButtonClick = async (): Promise<void> => {
   if (store.view === "garage") {
     if (store.carsCurrentPage * 7 < Number(store.carsCount)) {
       store.carsCurrentPage += 1;
@@ -81,7 +84,7 @@ export const nextButtonClick = async () => {
   }
 };
 
-export const prevButtonClick = async () => {
+export const prevButtonClick = async (): Promise<void> => {
   if (store.view === "garage") {
     if (store.carsCurrentPage != 1) {
       store.carsCurrentPage -= 1;
@@ -95,7 +98,7 @@ export const prevButtonClick = async () => {
   }
 };
 
-export const createAutoClick = async () => {
+export const createAutoClick = async (): Promise<void> => {
   const createColor: HTMLInputElement = <HTMLInputElement>(
     document.getElementById("create-color")
   );
@@ -121,7 +124,9 @@ export const updateAutoClick = async (): Promise<void> => {
   const updateColor: HTMLInputElement = <HTMLInputElement>(
     document.getElementById("update-color")
   );
-  const updateName = <HTMLButtonElement>document.getElementById("update-name");
+  const updateName: HTMLButtonElement = <HTMLButtonElement>(
+    document.getElementById("update-name")
+  );
   const updateButton: HTMLButtonElement = <HTMLButtonElement>(
     document.querySelector(".update-button")
   );
@@ -137,7 +142,7 @@ export const updateAutoClick = async (): Promise<void> => {
   }
 };
 
-export const deleteAutoClick = async (e: Event) => {
+export const deleteAutoClick = async (e: Event): Promise<void> => {
   const updateColor: HTMLInputElement = <HTMLInputElement>(
     document.getElementById("update-color")
   );
@@ -164,7 +169,7 @@ export const deleteAutoClick = async (e: Event) => {
   }
 };
 
-export const updateInputClick = async (e: Event) => {
+export const updateInputClick = async (e: Event): Promise<void> => {
   const updateNameInput: HTMLInputElement = <HTMLInputElement>(
     document.querySelector(".name__auto__update")
   );
@@ -187,7 +192,7 @@ export const updateInputClick = async (e: Event) => {
   }
 };
 
-export const startStopAutoEngine = async (e: Event) => {
+export const startStopAutoEngine = async (e: Event): Promise<void> => {
   if ((<HTMLButtonElement>e.target).classList.contains("button-engine")) {
     const id = Number((<HTMLButtonElement>e.target).id.split("-")[1]);
     const status: string = (<HTMLButtonElement>e.target).id.split("-")[0];
@@ -207,7 +212,7 @@ export const startStopAutoEngine = async (e: Event) => {
 };
 
 const letters = "0123456789ABCDEF";
-const carsNameArray = [
+const carsNameArray: string[][] = [
   [
     "Nissan",
     "Mercedes",
@@ -235,9 +240,9 @@ const carsNameArray = [
 ];
 
 const renderNameAuto = (): string => {
-  const nameModel =
+  const nameModel: string =
     carsNameArray[0][Math.floor(Math.random() * carsNameArray[1].length)];
-  const nameMark =
+  const nameMark: string =
     carsNameArray[1][Math.floor(Math.random() * carsNameArray[0].length)];
   return nameModel + " " + nameMark;
 };
@@ -250,13 +255,13 @@ const renderColorAuto = (): string => {
   return color;
 };
 
-export const generateCarsClick = async () => {
+export const generateCarsClick = async (): Promise<void> => {
   const generateCars: HTMLButtonElement = <HTMLButtonElement>(
     document.querySelector(".generate-cars-button")
   );
   for (let i = 0; i < 100; i++) {
-    const name = renderNameAuto();
-    const color = renderColorAuto();
+    const name: string = renderNameAuto();
+    const color: string = renderColorAuto();
     const auto: { name: string; color: string } = {
       name: name,
       color: color,
@@ -267,7 +272,7 @@ export const generateCarsClick = async () => {
   await checkPagination();
 };
 
-export const sortOrder = async (e: Event) => {
+export const sortOrder = async (e: Event): Promise<void> => {
   if ((<HTMLButtonElement>e.target).classList.contains("wins")) {
     store.sortBy = "wins";
     if (store.orderBy === "" || store.orderBy === "asc") {
@@ -293,7 +298,7 @@ export const sortOrder = async (e: Event) => {
 };
 
 const modalCheck = (name: string, time: string): void => {
-  setTimeout(() => {
+  setTimeout((): void => {
     store.opacity = "0";
     checkPagination();
   }, 2000);
@@ -302,7 +307,7 @@ const modalCheck = (name: string, time: string): void => {
   store.timeWinnerCar = time;
 };
 
-export const raceAuto = async (e: Event) => {
+export const raceAuto = async (e: Event): Promise<void> => {
   if ((<HTMLButtonElement>e.target).classList.contains("race")) {
     const arr: number[] = [];
     store.winners.forEach((winner) => {

@@ -40,39 +40,53 @@ export const listener = (): void => {
   const generateCars: HTMLButtonElement = <HTMLButtonElement>(
     document.querySelector(".generate-cars-button")
   );
-  createAuto.addEventListener("submit", async (e: Event) => {
-    e.preventDefault();
-    await createAutoClick();
-  });
-  createNameAuto.addEventListener("input", () => {
+  createAuto.addEventListener(
+    "submit",
+    async (e: Event): Promise<void> => {
+      e.preventDefault();
+      await createAutoClick();
+    }
+  );
+  createNameAuto.addEventListener("input", (): void => {
     createButton.removeAttribute("disabled");
   });
-  updateAuto.addEventListener("submit", async (e: Event) => {
-    e.preventDefault();
-    await updateAutoClick();
-  });
-  document.body.addEventListener("click", async (e: Event) => {
-    await deleteAutoClick(e);
-    await updateInputClick(e);
-    await startStopAutoEngine(e);
-    await sortOrder(e);
-    await raceAuto(e);
-  });
-
-  next.addEventListener("click", async () => {
-    await nextButtonClick();
-  });
-
-  prev.addEventListener("click", async () => {
-    await prevButtonClick();
-  });
-
+  updateAuto.addEventListener(
+    "submit",
+    async (e: Event): Promise<void> => {
+      e.preventDefault();
+      await updateAutoClick();
+    }
+  );
+  document.body.addEventListener(
+    "click",
+    async (e: Event): Promise<void> => {
+      await deleteAutoClick(e);
+      await updateInputClick(e);
+      await startStopAutoEngine(e);
+      await sortOrder(e);
+      await raceAuto(e);
+    }
+  );
+  next.addEventListener(
+    "click",
+    async (): Promise<void> => {
+      await nextButtonClick();
+    }
+  );
+  prev.addEventListener(
+    "click",
+    async (): Promise<void> => {
+      await prevButtonClick();
+    }
+  );
   changeView(toGarage, "garage");
   changeView(toWinners, "winners");
-
-  generateCars.addEventListener("click", async () => {
-    generateCars.setAttribute("disabled", "true");
-    await generateCarsClick();
-    generateCars.removeAttribute("disabled");
-  });
+  generateCars.addEventListener(
+    "click",
+    async (): Promise<void> => {
+      generateCars.setAttribute("disabled", "true");
+      await generateCarsClick();
+      generateCars.removeAttribute("disabled");
+    }
+  );
 };

@@ -1,22 +1,28 @@
-const url = "http://localhost:3000";
+import { Auto, Winners } from "./types/types";
 
+const url = "http://localhost:3000";
 const garage = `${url}/garage`;
 const winners = `${url}/winners`;
 const engine = `${url}/engine`;
 
-export const getCars = async (page: number, limit = 7) => {
+export const getCars = async (
+  page: number,
+  limit = 7
+): Promise<{ carsCount: string | null; carsItems: Auto[] }> => {
   const response = await fetch(`${garage}?_page=${page}&_limit=${limit}`);
-
   return {
     carsItems: await response.json(),
     carsCount: response.headers.get("X-Total-Count"),
   };
 };
 
-export const getCar = async (id: number) =>
+export const getCar = async (id: number): Promise<void> =>
   (await fetch(`${garage}/${id}`)).json();
 
-export const createCar = async (body: { name: string; color: string }) =>
+export const createCar = async (body: {
+  name: string;
+  color: string;
+}): Promise<void> =>
   (
     await fetch(garage, {
       method: "POST",
@@ -30,7 +36,7 @@ export const createCar = async (body: { name: string; color: string }) =>
 export const updateCar = async (
   body: { name: string; color: string },
   id: number
-) =>
+): Promise<void> =>
   (
     await fetch(`${garage}/${id}`, {
       method: "PUT",
@@ -41,7 +47,7 @@ export const updateCar = async (
     })
   ).json();
 
-export const deleteCar = async (id: number) =>
+export const deleteCar = async (id: number): Promise<void> =>
   (await fetch(`${garage}/${id}`, { method: "DELETE" })).json();
 
 const getSortOrder = (sort: string, order: string): string => {
@@ -54,8 +60,8 @@ export const getWinners = async (
   limit = 10,
   sort: string,
   order: string
-) => {
-  const response = await fetch(
+): Promise<{ winnersItems: Winners[]; winnersCount: string | null }> => {
+  const response: Response = await fetch(
     `${winners}?_page=${page}&_limit=${limit}${getSortOrder(sort, order)}`
   );
   const items = await response.json();
@@ -75,7 +81,7 @@ export const createWinner = async (body: {
   id: number;
   wins: number;
   time: number;
-}) =>
+}): Promise<void> =>
   (
     await fetch(winners, {
       method: "POST",
@@ -89,7 +95,7 @@ export const createWinner = async (body: {
 export const updateWinner = async (
   body: { wins: number; time: number },
   id: number
-) =>
+): Promise<void> =>
   (
     await fetch(`${winners}/${id}`, {
       method: "PUT",
@@ -100,15 +106,17 @@ export const updateWinner = async (
     })
   ).json();
 
-export const deleteWinner = async (id: number) =>
+export const deleteWinner = async (id: number): Promise<void> =>
   (await fetch(`${winners}/${id}`, { method: "DELETE" })).json();
 
 export const changeEngineStatus = async (id: number, status: string) => {
   if (status === "drive") {
-    const res = await fetch(`${engine}?id=${id}&status=${status}`).catch();
+    const res: Response = await fetch(
+      `${engine}?id=${id}&status=${status}`
+    ).catch();
     return res.status !== 200 ? { success: false } : { ...(await res.json()) };
   } else {
-    const res = await fetch(`${engine}?id=${id}&status=${status}`);
+    const res: Response = await fetch(`${engine}?id=${id}&status=${status}`);
     return await res.json();
   }
 };
