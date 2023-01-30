@@ -4,7 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Neural networks</title>
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
@@ -14,6 +14,26 @@
 			.slides section.has-light-background h2 {
 				color: #222;
 			}
+			.yolo {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+			}
+			.ul-disadvantages {
+				font-size: 28px;
+			}
+			.ul-disadvantages li {
+				text-align: justify;
+			}
+			.slide1 {
+				box-shadow: gainsboro;
+			}
+			.formula {
+				list-style-type: square;
+				width: 100%;
+				text-align: justify;
+			}
 		</style>
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css">
@@ -21,12 +41,181 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section data-background-color="lightblue">Slide 1</section>
-				<section data-background-color="lightblue">Slide 2</section>
-				<section data-background-color="lightblue">Slide 3</section>
-				<section data-background-color="lightblue">Slide 4</section>
-				<section data-background-color="lightblue">Slide 5</section>
-				<section data-background-color="lightblue">Slide 6</section>
+				<section data-background-transition="slide"  data-background="assets/network.jpg">
+					<h2>Neural networks</h2>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>Relevance</h2>
+					<div class="slide1">
+						There are computer systems capable of diagnosing diseases, planning treatment, performing operations,
+						solving complex mathematical equations in symbolic form.
+					</div>
+				</section>
+				
+				<section data-background-transition="slide"  data-background="assets/03.png">
+					<h2>Artificial intelligence(AI)</h2>
+					<div>
+						Based on the terminology, artificial intelligence (AI) is a program capable of effectively performing a certain task while learning
+					</div>
+				</section>
+				
+				<section data-background-transition="slide"  data-background="assets/01.png">
+					<h2>Artificial neural networks</h2>
+					<div>
+						Artificial neural networks calculate structures that can consist of a large number of elements, and each of these elements performs relatively simple functions.
+					</div>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>What is a neural network?</h2>
+					<img src="assets/07.1.jpg" alt="what is neural network" width="550" style="border-radius: 15px; ">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>You only look once</h2>
+					<div class="yolo">
+						<img src="./assets/08.1.png" alt="Yolo logo" width="101">
+						<img src="./assets/08.2.jpg" style="border-radius: 10px" alt="Yolo work" width="550">
+					</div>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>Magenta</h2>
+					<div>
+						Magenta is a research project demonstrating the potential of machine learning in the creation of works of art and music.
+					</div>
+					<img src="./assets/09.2.jpg" alt="magenta" width="283">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>Generative Pre-trained Transformer 3</h2>
+					<div>
+						GPT-3 (Generative Pre-trained Transformer 3) is the third generation of the natural language processing algorithm from OpenAI. The model, according to the developers, can be used to solve "any tasks in English".
+					</div>
+					<img src="./assets/10.1.jpg" width="289" alt="gpt-3">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>Neural networks also have disadvantages:</h2>
+					<ul class="ul-disadvantages">
+						<li>
+							The answer given by a neural network is always approximate – neural networks are not able to give accurate and unambiguous answers;
+						</li>
+						<li>
+							Inability to make decisions in several stages – a neural network cannot solve tasks that require sequential execution of several steps, it is able to solve the problem only "in one go";
+						</li>
+						<li>
+							Inability to solve computational problems – a neural network cannot solve problems that require sequential execution of several steps; it is able to solve the problem only "in one go";
+						</li>
+						<li>
+							Labor intensity and duration of training – it is required to train it on tens of millions of input data sets.
+						</li>
+					</ul>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>What is a neuron (processor)</h2>
+					<div>
+						A neuron is a computing unit that receives information, performs simple calculations on it and passes it on.
+					</div>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>What is a synapse (signal)?</h2>
+					<div>
+						A synapse is a connection between neurons
+					</div>
+					<img src="assets/07.1.jpg" alt="what is neural network" width="550" style="border-radius: 15px;">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>Forward propagation</h2>
+					<img src="./assets/14.1.jpg" alt="forward propagation" width="550" style="border-radius: 15px;">
+					<div>
+						Forward propagation is the process of transmitting input values to a neural network and obtaining output data, which is called the predicted value
+					</div>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<div style="margin-bottom: 30px;">The formula for calculating the neural network layer is as follows:</div>
+					<h2>
+						f(x) = (inputs * weights) + bias
+					</h2>
+					<div>
+						<ul class="formula">
+							<li>
+								x is the result
+							</li>
+							<li>
+								inputs are input values
+							</li>
+							<li>
+								weights are weights (synapses)
+							</li>
+							<li>
+								bias is the deviation neuron (not always used)
+							</li>
+						</ul>
+					</div>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>The activation function</h2>
+					<div>
+						The activation function determines the output value of the neuron depending on the result of the weighted
+						sum of inputs and the threshold value. In simple terms, the activation function is needed for data
+						normalization
+					</div>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>ReLU</h2>
+					<img src="./assets/17.1.jpg" alt="activation function" width="450" style="border-radius: 15px">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>Sigmoid</h2>
+					<img src="./assets/18.1.jpg" alt="activation function" width="450" style="border-radius: 15px">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>Softmax</h2>
+					<img src="./assets/19.1.jpg" alt="activation function" width="450" style="border-radius: 15px">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>What is a bias neuron?</h2>
+					<img src="./assets/20.1.jpg" alt="activation function" width="450" style="border-radius: 15px; margin-right: 15px">
+					<img src="./assets/20.2.jpg" alt="activation function" width="450" style="border-radius: 15px">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>What is back propagation?</h2>
+					<img src="./assets/21.1.jpg" alt="activation function" width="450" style="border-radius: 15px">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>What is back propagation?</h2>
+					<img src="./assets/22.1.jpg" alt="activation function" width="650" style="border-radius: 15px">
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>What are hyperparameters of the model?</h2>
+					<div>
+						Hyperparameters of a model are a configuration external to the model. Hyperparameters include: the number of
+						neurons in the layer, the learning step, the number of iterations, the activation function, as well as the
+						presence/absence of deviation neurons
+					</div>
+				</section>
+				
+				<section data-background-color="lightblue" data-transition="convex-in fade-out">
+					<h2>What is gradient descent?</h2>
+					<img src="./assets/24.1.jpg" alt="activation function" width="800" style="border-radius: 15px">
+					<div>
+						Gradient descent is a method of finding the minimum value of the loss function
+					</div>
+				</section>
 			</div>
 		</div>
 
