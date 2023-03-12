@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="../assets/icons/favicon.png" rel="shortcut icon"/>
+  <link rel="stylesheet" href="../assets/styles/style.css"/>
+  <link rel="stylesheet" href="../assets/styles/normalize.css"/>
+  <title>Songbird</title>
+</head>
+<body>
+<div class="wrapper">
+  <header class="header">
+    <div class="header__block">
+      <div class="header__logo">
+        <a href="../index.html">
+          <img class="header__logo-image" src="../assets/images/Header-logo.png" alt="header logo">
+        </a>
+      </div>
+      <div class="header__score">Score:</div>
+      <div class="lang">
+        <label for="select"></label>
+        <select id="select" class="select-lang">
+          <option class="select-item" selected>Ru</option>
+          <option class="select-item">En</option>
+        </select>
+      </div>
+    </div>
+    <nav class="nav">
+      <ul class="nav__ul">
+        <li class="nav__ul-item active">Разминка</li>
+        <li class="nav__ul-item">Воробьиные</li>
+        <li class="nav__ul-item">Лесные птицы</li>
+        <li class="nav__ul-item">Певчие птицы</li>
+        <li class="nav__ul-item">Хищные птицы</li>
+        <li class="nav__ul-item">Морские птицы</li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main>
+    <section class="gallery" id="gallery">
+      <div class="gallery-text" id="gallery-text">Gallery</div>
+    </section>
+    
+    <section class="result-quiz hide">
+      <h1 class="result-quiz__h1">Поздравляем с прохождением викторины</h1>
+      <div class="result-quiz__name">Ваш результат:</div>
+      <div class="result-quiz__score">30</div>
+      <div>
+        <a href="quiz-page.html" class="start-quiz__button">Start the quiz</a>
+      </div>
+    </section>
+    
+    <section class="question">
+      <div class="question__image-block">
+        <img src="../assets/images/plug.jpg" class="question__image-block__img" alt="bird image">
+      </div>
+      <div class="question__description">
+        <h1 class="question__description-name">Ворон</h1>
+        
+        <div class="question__description-audio">
+          <div class="audio-player">
+            <div class="player-controls">
+              <div class="player-controls-btn">
+                <button class="play player-icon"></button>
+              </div>
+            </div>
+            <div class="player-controls__range">
+              <div class="timeline">
+                <div class="progress"></div>
+              </div>
+              <div class="player-controls__range-volume">
+                <div class="music-time">
+                  <div class="current">0:00</div>
+                  <div class="divider">/</div>
+                  <div class="length"></div>
+                </div>
+                <div class="volume-container">
+                  <div class="volume-button">
+                    <div class="volume mute"></div>
+                  </div>
+                  <div class="volume-slider">
+                    <div class="volume-percentage"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="answer-block">
+      <ul class="answer-block__options">
+        <li class="answer-block__options-item">
+          <span class="answer-block__circle"></span>
+          <span class="answer-block__options-item__name">Ворон</span>
+        </li>
+        <li class="answer-block__options-item">
+          <span class="answer-block__circle"></span>
+          <span class="answer-block__options-item__name">Журавль</span>
+        </li>
+        <li class="answer-block__options-item">
+          <span class="answer-block__circle"></span>
+          <span class="answer-block__options-item__name">Ласточка</span>
+        </li>
+        <li class="answer-block__options-item">
+          <span class="answer-block__circle"></span>
+          <span class="answer-block__options-item__name">Кукушка</span>
+        </li>
+        <li class="answer-block__options-item">
+          <span class="answer-block__circle"></span>
+          <span class="answer-block__options-item__name">Синица</span>
+        </li>
+        <li class="answer-block__options-item">
+          <span class="answer-block__circle"></span>
+          <span class="answer-block__options-item__name">Грач</span>
+        </li>
+      </ul>
+      
+      <div class="answer-block__content">
+        <div class="answer-block__content__plug">Прослушайте плеер и выберите вариант ответа...</div>
+        <div class="answer-block__content-intro hide">
+          <div class="answer-block__content__image-block">
+            <img src="../assets/images/plug.jpg" class="answer-block__description__image-block__img" alt="bird image">
+          </div>
+          <div class="answer-block__content-description">
+            <div class="answer-block__content-name">Ворон</div>
+            <div class="answer-block__content-name-latin">Voron</div>
+            <div class="answer-block__content-audio">
+              
+              <div class="audio-player__answer">
+                <div class="player-controls">
+                  <div class="player-controls-btn">
+                    <button class="play__answer player-icon"></button>
+                  </div>
+                </div>
+                <div class="player-controls__range">
+                  <div class="timeline">
+                    <div class="progress"></div>
+                  </div>
+                  <div class="player-controls__range-volume">
+                    <div class="music-time">
+                      <div class="current">0:00</div>
+                      <div class="divider">/</div>
+                      <div class="length"></div>
+                    </div>
+                    <div class="volume-container">
+                      <div class="volume-button">
+                        <div class="volume mute"></div>
+                      </div>
+                      <div class="volume-slider">
+                        <div class="volume-percentage"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="answer-block__content-text hide">
+          Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны
+          населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра,
+          монархия рухнет.
+        </div>
+      </div>
+    </section>
+    
+    <section class="next-level">
+      <button class="next-level__button button" disabled>Next level</button>
+    </section>
+  </main>
+  
+  <footer class="footer">
+    <ul class="footer__container-ul">
+      <li class="footer__container-ul-item">
+        <a href="https://rs.school/js/" class="footer__container-ul-link">
+          <img src="../assets/images/rs_school_js.png" class="rsschool" alt="rs school">
+        </a>
+      </li>
+      <li class="footer__container-ul-item">
+        2022
+      </li>
+      <li class="footer__container-ul-item">
+        <a href="https://github.com/tribisalex" class="footer__container-ul-link">
+          <img src="../assets/images/github-logo.png" class="git-hub" alt="YouTube">
+        </a>
+      </li>
+    </ul>
+  </footer>
+  <div class="overlay" id="overlay"></div>
+</div>
+
+<div class="gallery__popap" id="gallery__popap">
+  <img src="../assets/icons/windows-close.png"
+       width="14"
+       height="14"
+       class="close-popap"
+       id="close-popap"
+       alt="close popap">
+  <div class="gallery__popap-list">
+    <ul class="gallery__popap-list__options">
+    </ul>
+  </div>
+  <div class="gallery__popap-item">
+    <div class="gallery__popap-item__image-block">
+      <img src="../assets/images/plug.jpg" class="gallery__popap-item__image" alt="bird image">
+    </div>
+    <div class="gallery__popap-item-description">
+      <div class="gallery__popap-item-name">Ворон</div>
+      <div class="gallery__popap-item-name-latin">Voron</div>
+      <div class="gallery__popap-item-audio">
+        <div class="gallery__popap-item__audio">
+          <div class="player-controls">
+            <div class="player-controls-btn">
+              <button class="play__gallery player-icon"></button>
+            </div>
+          </div>
+          <div class="player-controls__range">
+            <div class="timeline">
+              <div class="progress"></div>
+            </div>
+            <div class="player-controls__range-volume">
+              <div class="music-time">
+                <div class="current">0:00</div>
+                <div class="divider">/</div>
+                <div class="length"></div>
+              </div>
+              <div class="volume-container">
+                <div class="volume-button">
+                  <div class="volume mute"></div>
+                </div>
+                <div class="volume-slider">
+                  <div class="volume-percentage"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="gallery__popap-text">
+    Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны
+    населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра,
+    монархия рухнет.
+  </div>
+</div>
+
+<script src="../assets/scripts/checklist.js"></script>
+<script src="../assets/scripts/index.js"></script>
+<script src="../assets/scripts/gallery.js"></script>
+
+</body>
+</html>
